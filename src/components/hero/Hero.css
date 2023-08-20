@@ -1,0 +1,13 @@
+#hero {
+    width: 100%;
+    height: 40vh;
+    background-color: blueviolet;
+}
+
+@media only screen and (min-width: 992px) {
+    #hero {
+        width: 100%;
+        height: calc(100vh - 100px);
+        background-color: blueviolet;
+    }
+}

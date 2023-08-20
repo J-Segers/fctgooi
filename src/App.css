@@ -1,0 +1,19 @@
+/* root variables */
+:root {
+    --primary-color: #eee;
+    --secundary-color: #0d2243;
+    --primary-text: #0f0f0f;
+    --secundary-text: #efefef;
+}
+
+:root {
+    box-sizing: content-box;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+main {
+    width: 100%;
+    min-height: calc(100vh - 300px);
+}
