@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import "./NavBar.css";
 import { Link } from 'react-router-dom';
@@ -8,15 +8,20 @@ NavBar.propTypes = {
 };
 
 function NavBar() {
+    
+    const [isOpen, toggleIsOpen] = useState(false);
+
     return (
-        <nav>
-            <ul>
-                <li><Link to="/home">Home</Link></li>
-                <li><Link to="#" className="drop">Club</Link></li>
-                <li><Link to="/galerij">Fotogalerij</Link></li>
-                <li><a href="mailto:info@fctgooi.nl" className="contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div id="nav-container">
+            <nav className={isOpen ? "open" : "closed"}>
+                <Link to="/home">Home</Link>
+                <Link to="#" className="drop">Club</Link>
+                <Link to="/galerij">Fotogalerij</Link>
+                <a href="mailto:info@fctgooi.nl" className="contact">Contact</a>
+            </nav>
+            <div className="burger-btn " onClick={() => toggleIsOpen(!isOpen)}><div>&nbsp;</div></div>
+        </div>
+        
     );
 }
 
