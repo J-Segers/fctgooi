@@ -17,20 +17,11 @@ function Hero() {
         <div id="hero">
             <div className="maand-info">
                 <img src={info} alt="" />
-                <div className="info-title">
-                    <h2>Foto van de Maand</h2>
-                </div>
+                <h2>Foto van de Maand</h2>
+                <div className="fotograaf"><span>Gemaakt door:</span>{` ${maandFoto?.fotograaf}.`}</div>
+                <div className="evenement"><span>Evenement:</span>{` ${maandFoto?.evenement}.`}</div>
                 <div className="info-specs">
-                    <ul>
-                        <li>
-                            {`Gemaakt door: ${maandFoto?.fotograaf}`}
-                        </li>
-                        <li>
-                            {`Evenement: ${maandFoto?.evenement}`}
-                        </li>
-                        <li>{`${maandFoto?.opmerking}`}</li>
-                    </ul>
-
+                   {`${maandFoto?.opmerking}`}
                 </div>
             </div>
         </div>
