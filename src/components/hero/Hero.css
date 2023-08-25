@@ -1,7 +1,12 @@
 #hero {
     width: 100%;
     height: 40vh;
-    background-color: blueviolet;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero img {
+    width: 100%;
 }
 
 .maand-info {
@@ -18,11 +23,12 @@
         " . img . event . specs . "
         " . . . . . . . ";
     gap: 2%;
-    background-color: var(--primary-color);
-    opacity: 50%;
+    background-color: rgba(238, 238, 238, 0.5);
     box-shadow: 5px;
     transition: none;
     overflow: hidden;
+    position: absolute;
+    z-index: 10;
 }
 
 .maand-info img {
@@ -30,6 +36,13 @@
     height: 50px;
     grid-area: img;
     margin: auto 0;
+}
+
+.maand-info h2,
+.maand-info .fotograaf,
+.maand-info .evenement,
+.maand-info .info-specs {
+    color: var(--accent-text);
 }
 
 .maand-info h2 {
@@ -58,15 +71,17 @@
     #hero {
         width: 100%;
         height: calc(100vh - 100px);
-        background-color: blueviolet;
+        overflow: hidden;
+    }
+
+    #hero img {
+        position: absolute;
+        top: 0;
     }
 
     .maand-info {
         width: 100px;
         height: 100px;
-        transition: 
-            width 250ms ease-in-out 250ms,
-            height 250ms ease-in-out 250ms;
         display: grid;
         grid-template-columns: 20px 80px 10px 260px 20px;
         grid-template-rows: 5px 35px 25px 25px 10px 100px 20px;
@@ -97,12 +112,15 @@
         opacity: 0;
     }
 
+    .maand-info, .maand-info:hover {
+        transition: 
+        width 250ms ease-in-out 250ms,
+        height 250ms ease-in-out 250ms;
+    }
+
     .maand-info:hover {
         width: 390px;
         height: 220px;
-        transition: 
-            width 250ms ease-in-out 250ms,
-            height 250ms ease-in-out 250ms;
     }
 
     .maand-info:hover h2,
