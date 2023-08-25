@@ -38,39 +38,78 @@ nav a:hover {
     visibility: hidden;
 }
 
-.burger-btn {
+.burger-btn-open, .burger-btn-closed {
     width: 31px;
     height: 31px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
     right: 100px;
     border: 1px solid white;
 }
 
-.burger-btn div,
-.burger-btn div::before,
-.burger-btn div::after  {
+.burger-btn-open div,
+.burger-btn-closed div {
     width: 23px;
     height: 5px;
     background-color: var(--primary-color);
+    opacity: 100%;
 }
 
-
-.burger-btn div::before {
-    position: absolute;
-    top: 4px;
-    content: "";
+.burger-btn-open {
+    justify-content: center;
+    transition: justify-content 250ms ease-in-out;
 }
 
-.burger-btn div::after {
+.burger-btn-closed div, .burger-btn-open div {
     position: absolute;
-    bottom: 4px;
     left: 4px;
-    content: "";
 }
 
+.burger-btn-closed div {
+    rotate: 0;
+    transition: rotate 100ms ease-in-out;
+}
+
+.burger-btn-closed div:nth-child(1) {
+    top: 4px;
+    transition:
+        rotate 100ms ease-in-out,
+        top 250ms ease-in-out 100ms;
+}
+
+.burger-btn-closed div:nth-child(2) {
+    top: 13px;
+    opacity: 100%;
+    transition: opacity 0ms linear 100ms;
+}
+
+.burger-btn-closed div:nth-child(3) {
+   bottom: 4px;
+   transition:
+        rotate 100ms ease-in-out,
+        bottom 250ms ease-in-out 100ms;
+}
+
+.burger-btn-open div:nth-child(1) {
+    top: 13px;
+    rotate: 45deg;
+    transition: top 250ms ease-in-out, rotate 100ms ease-in-out 250ms;
+}
+
+.burger-btn-open div:nth-child(2) {
+    top: 13px;
+    opacity: 0;
+    transition: opacity 0ms linear 250ms;
+}
+
+.burger-btn-open div:nth-child(3) {
+    bottom: 13px;
+    rotate: -45deg;
+    transition: bottom 250ms ease-in-out, rotate 100ms ease-in-out 250ms;
+}
+
+.burger-btn-open div:first-child, .burger-btn-open div:last-child {
+    opacity: 100%;
+}
 
 @media only screen and (min-width: 992px) {
     nav {
@@ -97,7 +136,7 @@ nav a:hover {
         margin-left: 25px;
     }
 
-    .burger-btn {
+    .burger-btn-open, .burger-btn-closed {
         width: 31px;
         height: 31px;
         display: flex;

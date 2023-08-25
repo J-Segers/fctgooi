@@ -19,7 +19,11 @@ function NavBar() {
                 <Link to="/galerij">Fotogalerij</Link>
                 <a href="mailto:info@fctgooi.nl" className="contact">Contact</a>
             </nav>
-            <div className="burger-btn " onClick={() => toggleIsOpen(!isOpen)}><div>&nbsp;</div></div>
+            <div className={isOpen ? "burger-btn-open" : "burger-btn-closed"} onClick={() => toggleIsOpen(!isOpen)}>
+                <div className="bar" />
+                <div className="bar" />
+                <div className="bar" />
+            </div>
         </div>
         
     );
