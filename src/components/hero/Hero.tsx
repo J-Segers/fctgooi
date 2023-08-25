@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Hero.css";
-import info from "../../assets/Information-Icon.png";
+import info from "../../assets/Information-Icon.svg";
+import foto from "../../assets/Bob Altena-.jpg"
 import PropTypes from 'prop-types';
 
 Hero.propTypes = {
@@ -8,11 +9,15 @@ Hero.propTypes = {
 };
 
 function Hero() {
+
+
     const maandFoto = {
+        foto: foto,
         fotograaf: "Pieter Post",
         evenement: "club wedstrijd",
         opmerking: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
+
     return (
         <div id="hero">
             <div className="maand-info">
@@ -24,6 +29,7 @@ function Hero() {
                    {`${maandFoto?.opmerking}`}
                 </div>
             </div>
+            <img src={maandFoto.foto} alt="" />
         </div>
     );
 }
