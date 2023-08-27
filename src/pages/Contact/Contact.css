@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    -webkit-box-shadow: inset #ddd 1px 1px 2px;
+    -moz-box-shadow: inset #ddd 1px 1px 2px;
+    box-shadow: inset #ddd 2px 2px 2px;
+}
+
+.form {
+    -webkit-box-shadow: inset #ddd 1px 1px 2px;
+    -moz-box-shadow: inset #ddd 1px 1px 2px;
+    width: 600px;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid #d7c9c9;
+    box-shadow: #ddd 0 2px 2px;
+}
+
+.form input, textarea {
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #d7c9c9;
+    border-radius: 12px;
+    background-color: #fff1f1;
+    -webkit-box-shadow: inset #ddd 1px 1px 2px;
+    -moz-box-shadow: inset #ddd 1px 1px 2px;
+    box-shadow: inset #ddd 2px 2px 2px;
+    text-align: center;
+    resize: none;
+}
+
+.form input, textarea :focus {
+    outline: none;
+}
+
+.form button {
+    width: 20%;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #d7c9c9;
+    border-radius: 20px;
+    /*background-color: -var(color-secondary);*/
+    background-color: #130046;
+    color: #d7c9c9;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
+
