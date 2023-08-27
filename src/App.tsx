@@ -9,8 +9,6 @@ function App() {
   return (
 
     <BrowserRouter>
-    
-      <main>
 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -19,12 +17,6 @@ function App() {
           <Route path='/galerij' element={<Galerij />} />
           <Route path='/galerij' element={<Galerij />} /> */}
         </Routes>
-
-      </main>
-      
-
-      <Footer />
-      
 
     </BrowserRouter>
 

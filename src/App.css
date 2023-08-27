@@ -4,6 +4,7 @@
     --secundary-color: #0d2243;
     --primary-text: #0f0f0f;
     --secundary-text: #efefef;
+    --accent-text: #0d2243;
 }
 
 :root {
@@ -13,7 +14,3 @@
     background-color: var(--primary-color);
 }
 
-main {
-    width: 100%;
-    min-height: calc(100vh - 300px);
-}
