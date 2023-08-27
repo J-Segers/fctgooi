@@ -29,7 +29,9 @@ function Hero() {
                    {`${maandFoto?.opmerking}`}
                 </div>
             </div>
-            <img src={maandFoto.foto} alt="" />
+            <div className='hero-image-container'>
+                <img src={maandFoto.foto} alt="" />
+            </div>
         </div>
     );
 }
