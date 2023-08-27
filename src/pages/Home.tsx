@@ -15,13 +15,8 @@ function Home() {
             <main>
                 <section className="recente-activiteiten">
                     <Post />
-                </section>
-                <Spacer />
-                <section className="recente-activiteiten">
-                    <article>
-                        {/* hier kunnen in meerdere article elements de recente activiteiten geplaatst worden of in een nieuw component. */}
-                        &nbsp;
-                    </article>
+                    <Spacer />
+                    <Post />
                 </section>
             </main>
             <Footer />
