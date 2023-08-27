@@ -1,0 +1,153 @@
+#hero {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image-container img {
+    width: 100%;
+}
+
+.maand-info {
+    width: 100%;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 2% 50px 2% 25% 2% auto 2%;
+    grid-template-rows: 5% 25% 2% 19% 19% 5%;
+    grid-template-areas: 
+        " . . . . . . . "
+        " . img . title . specs . "
+        " . img . . . specs . "
+        " . img . fg . specs . "
+        " . img . event . specs . "
+        " . . . . . . . ";
+    gap: 2%;
+    background-color: rgba(238, 238, 238, 0.5);
+    box-shadow: 5px;
+    transition: none;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+}
+
+.maand-info img {
+    width: 50px;
+    height: 50px;
+    grid-area: img;
+    margin: auto 0;
+}
+
+.maand-info h2,
+.maand-info .fotograaf,
+.maand-info .evenement,
+.maand-info .info-specs {
+    color: var(--accent-text);
+}
+
+.maand-info h2 {
+    margin: 0;
+    padding: 0;
+    grid-area: title;
+}
+
+.fotograaf {
+    grid-area: fg;
+}
+
+.evenement {
+    grid-area: event;
+}
+
+.info-specs {
+    grid-area: specs;
+}
+
+.fotograaf span, .evenement span {
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 992px) {
+    #hero {
+        width: 100%;
+        height: calc(100vh - 100px);
+    }
+
+    .hero-image-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: absolute;
+    }
+
+    .hero-image-container img {
+        width: 100%;
+    }
+
+    .maand-info {
+        width: 100px;
+        height: 100px;
+        display: grid;
+        grid-template-columns: 20px 80px 10px 260px 20px;
+        grid-template-rows: 5px 35px 25px 25px 10px 100px 20px;
+        grid-template-areas: 
+        "img img . . ."
+        "img img . title ."
+        "img img . fg ."
+        "img img . event ."
+        "img img . . ."
+        ". specs specs specs ."
+        ". . . . .";
+        border-radius: 50px;
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        box-shadow: 4px 5px 3px rgba(0, 0, 0, .3);
+        padding: 0;
+        gap: 0;
+        z-index: 10;
+    }
+
+    .maand-info img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .maand-info h2, .maand-info .fotograaf, .maand-info .evenement, .maand-info .info-specs {
+        transition: opacity 250ms ease-in-out;
+        opacity: 0;
+    }
+
+    .maand-info, .maand-info:hover {
+        transition: 
+        width 250ms ease-in-out 250ms,
+        height 250ms ease-in-out 250ms;
+    }
+
+    .maand-info:hover {
+        width: 390px;
+        height: 220px;
+    }
+
+    .maand-info:hover h2,
+    .maand-info:hover .fotograaf,
+    .maand-info:hover .evenement,
+    .maand-info:hover .info-specs {
+        transition: opacity 250ms ease-in-out 500ms;
+        opacity: 100%;
+    }
+
+}
