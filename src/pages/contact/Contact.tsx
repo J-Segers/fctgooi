@@ -50,12 +50,6 @@ function Contact() {
                             placeholder="Vul hier je emailadres in"
                             required={true}
                         />
-                        <Input
-                            id="user_subject"
-                            type="text"
-                            placeholder="Vul hier het onderwerp van je bericht in"
-                            required={true}
-                        />
                         <Input id="message"
                                type="textarea"
                                placeholder="Schrijf hier je bericht aan ons"

@@ -14,7 +14,7 @@
 
 .input-field:focus {
     background-color: white;
-    color: var(--secundary-color);
+    color: black;
     outline: none;
 }
 
