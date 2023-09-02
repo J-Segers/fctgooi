@@ -1,5 +1,6 @@
 import React from 'react';
 import './Input.css';
+
 function Input(props: {
     id: string,
     type: string,
@@ -19,7 +20,7 @@ function Input(props: {
     } else {
         return (
             <input
-                type="text"
+                type={props.type}
                 id={props.id}
                 name={props.id}
                 placeholder={props.placeholder}

@@ -1,13 +1,32 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import './Contact.css';
 import Header from "../../components/header/Header";
 import Form from "../../components/form/Form";
 import Input from "../../components/input/Input";
 import Button from "../../components/button/Button";
+import MailService from "../../services/mailService";
+import {useNavigate} from "react-router-dom";
 
 
 function Contact() {
     const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+    const form2: any = useRef<HTMLFormElement>(null);
+    const navigate = useNavigate();
+
+
+    function sendEmail(e: any): void {
+        e.preventDefault();
+        MailService
+            .sendEmail(form2)
+            .then(():void => {
+               setIsSubmitted(!isSubmitted)
+                setTimeout(() => {
+                   navigate('/')
+                }, 5000)
+            })
+            .catch((e: any) => console.error(e));
+    }
+
 
     return (
         <>
@@ -15,7 +34,12 @@ function Contact() {
             <div className={`container`}>
 
                 {!isSubmitted ?
-                    <Form title="Neem contact met ons op" isSubmitted={isSubmitted} setIsSubmitted={setIsSubmitted}>
+                    <Form
+                        form={form2}
+                        submitAction={sendEmail}
+                        title="Neem contact met ons op"
+                        isSubmitted={isSubmitted}
+                        setIsSubmitted={setIsSubmitted}>
                         <div className="form-control">
                             <Input
                                 id="user_name"
