@@ -1,12 +1,11 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
+import Spacer from '../../components/spacer/Spacer';
 import MailService from "../../services/mailService";
 import './Contact.css';
-import IMessage from "../../models/message";
+import Header from "../../components/header/Header";
 
 function Contact() {
-    const [isSent, setIsSent] = React.useState<boolean>(false);
-    const [fieldsFilled, setFieldsFilled] = React.useState<boolean>(false);
-    const [info, setInfo] = React.useState<IMessage>(); // [name, setName] = useState("");
+    const [isSent, setIsSent] = useState<boolean>(false);
     const form: any = useRef<HTMLFormElement>(null);
 
     function sendEmail(e: any): void {
@@ -17,61 +16,83 @@ function Contact() {
             .catch((e: any) => console.error(e));
     }
 
-    function changeValue(e: any) {
-        if (info?.user_email !== "" && info?.user_message !== "" && info?.user_name !== "") {
-            setFieldsFilled(true);
-        } else {
-            setFieldsFilled(false);
-        }
-        setInfo({...info, [e.target.name]: e.target.value})
-    }
-
     return (
-        <div className={`container`}>
+        <>
+            <Header/>
+            <div className={`container`}>
 
-            <section className={`form-section`}>
                 {!isSent ?
-                    <form ref={form} onSubmit={sendEmail} className={`form`}>
-                        <h1>Neem contact op</h1>
-                        <input type="text"
-                               name="name"
-                               placeholder="Naam"
-                               onChange={changeValue}
-                               value={info?.user_name}
-                        />
-                        <input type="email"
-                               name="user_email"
-                               placeholder="Emailadres"
-                               onChange={changeValue}
-                               value={info?.user_email}
-                        />
-                        <textarea name="message"
-                                  placeholder="Schrijf hier je bericht"
-                                  onChange={changeValue}
-                                  value={info?.user_message}
-                        />
-                        <button type="submit" value="Send" disabled={!fieldsFilled}>
-                            Versturen
-                        </button>
-                    </form>
+                    <section className="contact">
+                        <div className="spacer-form-container">
+                            <Spacer/>
+
+
+                            <div className="contact-form-container">
+                                <h2>Neem contact met ons op</h2>
+                                <div className="contact-form">
+                                    <form ref={form} onSubmit={sendEmail} className={`form`}>
+                                        <div className="form-control">
+                                            <input
+                                                type="text"
+                                                id="user_name"
+                                                name="user_name"
+                                                placeholder="Vul hier je naam in"
+                                                className="input-field"
+                                                required
+                                            />
+                                        </div>
+                                        <div className="form-control">
+                                            <input
+                                                type="email"
+                                                id="user_email"
+                                                name="user_email"
+                                                placeholder="Vul hier je emailadres in"
+                                                className="input-field"
+                                                required
+                                            />
+                                        </div>
+                                        <div className="form-control">
+                                    <textarea
+                                        id="message"
+                                        placeholder="Schrijf hier je bericht aan ons"
+                                        name="message"
+                                        className="input-field"
+                                        required
+                                    ></textarea>
+                                        </div>
+                                        <button type="submit" value="Send" className={'submit-btn'}>
+                                            Versturen
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <Spacer/>
+                        </div>
+
+                    </section>
                     :
-                    <p>Je bericht is verstuurd! Dankjewel!</p>
+                    <section className={`form-section`}>
+
+                        <p>Je bericht is verstuurd! Dankjewel!</p>
+
+                    </section>
                 }
-            </section>
 
-            {/*<section className={`whereToFind-section`}>*/}
-            {/*    <iframe*/}
-            {/*        title={`whereToFind`}*/}
-            {/*        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4886.2026720722515!2d5.179591000000001!3d52.241543!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c66b4e1624c3bb%3A0x6655cb80e60622c0!2sWoondienstencentrum%20Lopes%20Dias!5e0!3m2!1snl!2snl!4v1692459524624!5m2!1snl!2snl"*/}
-            {/*        width="400"*/}
-            {/*        height="300"*/}
-            {/*        loading="lazy"*/}
-            {/*        referrerPolicy="no-referrer-when-downgrade">*/}
-            {/*    </iframe>*/}
-            {/*</section>*/}
+                {/*<section className={`whereToFind-section`}>*/}
+                {/*    <iframe*/}
+                {/*        title={`whereToFind`}*/}
+                {/*        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4886.2026720722515!2d5.179591000000001!3d52.241543!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c66b4e1624c3bb%3A0x6655cb80e60622c0!2sWoondienstencentrum%20Lopes%20Dias!5e0!3m2!1snl!2snl!4v1692459524624!5m2!1snl!2snl"*/}
+                {/*        width="400"*/}
+                {/*        height="300"*/}
+                {/*        loading="lazy"*/}
+                {/*        referrerPolicy="no-referrer-when-downgrade">*/}
+                {/*    </iframe>*/}
+                {/*</section>*/}
 
 
-        </div>
+            </div>
+
+        </>
     );
 }
 
