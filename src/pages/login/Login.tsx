@@ -42,8 +42,8 @@ function Login() {
                 >
                     <Input
                         id="email"
-                        type="text"
-                        placeholder="Vul hier je emailadres in"
+                        type="email"
+                        placeholder="Vul hier je gebruikersnaam(emailadres) in"
                         required={true}
                     />
                     <Input
