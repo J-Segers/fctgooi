@@ -1,83 +1,56 @@
-import React, {useRef, useState} from 'react';
-import Spacer from '../../components/spacer/Spacer';
-import MailService from "../../services/mailService";
+import React, {useState} from 'react';
 import './Contact.css';
 import Header from "../../components/header/Header";
-import {useNavigate} from "react-router-dom";
-import Input from "../../components/Input/Input";
+import Form from "../../components/form/Form";
+import Input from "../../components/input/Input";
+import Button from "../../components/button/Button";
+
 
 function Contact() {
-    const [isSent, setIsSent] = useState<boolean>(false);
-    const form: any = useRef<HTMLFormElement>(null);
-    const navigate = useNavigate()
-
-    function sendEmail(e: any): void {
-        e.preventDefault(); // prevents the page from reloading when you hit “Send”
-        MailService
-            .sendEmail(form)
-            .then(():void => {
-                setIsSent(!isSent)
-                setTimeout(() => {
-                    navigate('/')
-                }, 5000)
-            })
-            .catch((e: any) => console.error(e));
-    }
+    const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
     return (
         <>
             <Header/>
             <div className={`container`}>
 
-                {!isSent ?
-                    <section className="contact">
-                        <div className="spacer-form-container">
-                            <Spacer/>
-
-
-                            <div className="contact-form-container">
-                                <h2>Neem contact met ons op</h2>
-                                <div className="contact-form">
-                                    <form ref={form} onSubmit={sendEmail} className="form">
-                                        <div className="form-control">
-                                            <Input
-                                                id="user_name"
-                                                type="text"
-                                                placeholder="Vul hier je naam in"
-                                                required={true}
-                                            />
-                                        </div>
-                                        <div className="form-control">
-                                            <Input
-                                                id="user_email"
-                                                type="email"
-                                                placeholder="Vul hier je emailadres in"
-                                                required={true}
-                                            />
-                                        </div><div className="form-control">
-                                        <Input
-                                            id="user_subject"
-                                            type="text"
-                                            placeholder="Vul hier het onderwerp van je bericht in"
-                                            required={true}
-                                        />
-                                    </div>
-                                        <div className="form-control">
-                                    <Input id="message"
-                                           type="textarea"
-                                           placeholder="Schrijf hier je bericht aan ons"
-                                           required={true}/>
-                                        </div>
-                                        <button type="submit" value="Send" className={'submit-btn'}>
-                                            Versturen
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                            <Spacer/>
+                {!isSubmitted ?
+                    <Form title="Neem contact met ons op" isSubmitted={isSubmitted} setIsSubmitted={setIsSubmitted}>
+                        <div className="form-control">
+                            <Input
+                                id="user_name"
+                                type="text"
+                                placeholder="Vul hier je naam in"
+                                required={true}
+                            />
                         </div>
+                        <div className="form-control">
+                            <Input
+                                id="user_email"
+                                type="email"
+                                placeholder="Vul hier je emailadres in"
+                                required={true}
+                            />
+                        </div>
+                        <div className="form-control">
+                            <Input
+                                id="user_subject"
+                                type="text"
+                                placeholder="Vul hier het onderwerp van je bericht in"
+                                required={true}
+                            />
+                        </div>
+                        <div className="form-control">
+                            <Input id="message"
+                                   type="textarea"
+                                   placeholder="Schrijf hier je bericht aan ons"
+                                   required={true}/>
+                        </div>
+                        <Button
+                            type={"submit"}
+                            message="Versturen"/>
 
-                    </section>
+                    </Form>
                     :
                     <section className={`form-section`}>
 

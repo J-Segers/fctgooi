@@ -1,6 +1,5 @@
 import React from 'react';
 import './Input.css';
-
 function Input(props: {
     id: string,
     type: string,
@@ -32,3 +31,13 @@ function Input(props: {
 }
 
 export default Input;
+
+
+// <div className="form-control">
+//     <Input
+//         id="user_name"
+//         type="text"
+//         placeholder="Vul hier je naam in"
+//         required={true}
+//     />
+// </div>
