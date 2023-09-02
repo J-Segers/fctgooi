@@ -3,16 +3,23 @@ import Spacer from '../../components/spacer/Spacer';
 import MailService from "../../services/mailService";
 import './Contact.css';
 import Header from "../../components/header/Header";
+import {useNavigate} from "react-router-dom";
 
 function Contact() {
     const [isSent, setIsSent] = useState<boolean>(false);
     const form: any = useRef<HTMLFormElement>(null);
+    const navigate = useNavigate()
 
     function sendEmail(e: any): void {
         e.preventDefault(); // prevents the page from reloading when you hit “Send”
         MailService
             .sendEmail(form)
-            .then(() => setIsSent(!isSent))
+            .then(():void => {
+                setIsSent(!isSent)
+                setTimeout(() => {
+                    navigate('/')
+                }, 5000)
+            })
             .catch((e: any) => console.error(e));
     }
 
@@ -30,7 +37,7 @@ function Contact() {
                             <div className="contact-form-container">
                                 <h2>Neem contact met ons op</h2>
                                 <div className="contact-form">
-                                    <form ref={form} onSubmit={sendEmail} className={`form`}>
+                                    <form ref={form} onSubmit={sendEmail} className="form">
                                         <div className="form-control">
                                             <input
                                                 type="text"
@@ -39,7 +46,7 @@ function Contact() {
                                                 placeholder="Vul hier je naam in"
                                                 className="input-field"
                                                 required
-                                            />
+                                            ></input>
                                         </div>
                                         <div className="form-control">
                                             <input
@@ -50,7 +57,16 @@ function Contact() {
                                                 className="input-field"
                                                 required
                                             />
-                                        </div>
+                                        </div><div className="form-control">
+                                        <input
+                                            type="text"
+                                            id="user_subject"
+                                            name="user_subject"
+                                            placeholder="Vul hier het onderwerp van je bericht in"
+                                            className="input-field"
+                                            required
+                                        />
+                                    </div>
                                         <div className="form-control">
                                     <textarea
                                         id="message"

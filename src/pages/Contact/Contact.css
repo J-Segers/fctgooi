@@ -22,16 +22,22 @@
     margin-bottom: 2px;
 }
 
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
 .spacer-form-container {
-    width: 45%;
+    width: 55%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 25px;
     border: none;
-    -webkit-box-shadow: inset #ddd 1px 1px 2px;
-    -moz-box-shadow: inset #ddd 1px 1px 2px;
-    box-shadow: inset #ddd 2px 2px 2px;
+    -webkit-box-shadow: 1px 4px 5px 0 rgba(0,0,0,0.36);
+    box-shadow: 1px 4px 5px 0 rgba(0,0,0,0.36);
     background-color: white;
 }
 
@@ -40,7 +46,6 @@
     padding: 0.938rem;
 }
 
-
 .contact-form-container textarea {
     min-height: 6.25rem;
     border: none;
@@ -48,12 +53,11 @@
 
 .contact-form-container .input-field {
     background-color: var(--primary-color);
-    color: rgb(128, 128, 128);
+    color: #BEBEBE;
     margin: 10px 0 10px 0;
     width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 5px;
+    padding: 10px 0 10px 10px;
+    border-radius: 10px;
     /*outline: none;*/
     -webkit-box-shadow: inset #ddd 1px 1px 2px;
     -moz-box-shadow: inset #ddd 1px 1px 2px;
@@ -61,18 +65,23 @@
     border: none;
 }
 
+.contact-form-container .input-field:focus {
+    background-color: white;
+    outline: none;
+}
+
 .input-field::placeholder {
-    padding: 0.5rem;
     color: lightgray;
 }
 
 .submit-btn {
-    width: 100%;
+    align-self: center;
+    width: 50%;
+    border-radius: 25px;
     padding: 10px;
     margin: 10px 0;
     background-color: var(--secundary-color);
     border: 2px solid var(--primary-color);
-    border-radius: 5px;
     font-size: 1rem;
     font-weight: bold;
     color: var(--primary-color);
