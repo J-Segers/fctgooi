@@ -10,18 +10,17 @@ import {useNavigate} from "react-router-dom";
 
 function Contact() {
     const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
-    const form2: any = useRef<HTMLFormElement>(null);
+    const form: any = useRef<HTMLFormElement>(null);
     const navigate = useNavigate();
-
 
     function sendEmail(e: any): void {
         e.preventDefault();
         MailService
-            .sendEmail(form2)
-            .then(():void => {
-               setIsSubmitted(!isSubmitted)
+            .sendEmail(form)
+            .then((): void => {
+                setIsSubmitted(!isSubmitted)
                 setTimeout(() => {
-                   navigate('/')
+                    navigate('/')
                 }, 5000)
             })
             .catch((e: any) => console.error(e));
@@ -32,44 +31,35 @@ function Contact() {
         <>
             <Header/>
             <div className={`container`}>
-
                 {!isSubmitted ?
-                    <Form
-                        form={form2}
-                        submitAction={sendEmail}
-                        title="Neem contact met ons op"
-                        isSubmitted={isSubmitted}
-                        setIsSubmitted={setIsSubmitted}>
-                        <div className="form-control">
-                            <Input
-                                id="user_name"
-                                type="text"
-                                placeholder="Vul hier je naam in"
-                                required={true}
-                            />
-                        </div>
-                        <div className="form-control">
-                            <Input
-                                id="user_email"
-                                type="email"
-                                placeholder="Vul hier je emailadres in"
-                                required={true}
-                            />
-                        </div>
-                        <div className="form-control">
-                            <Input
-                                id="user_subject"
-                                type="text"
-                                placeholder="Vul hier het onderwerp van je bericht in"
-                                required={true}
-                            />
-                        </div>
-                        <div className="form-control">
-                            <Input id="message"
-                                   type="textarea"
-                                   placeholder="Schrijf hier je bericht aan ons"
-                                   required={true}/>
-                        </div>
+                    <Form form={form}
+                          submitAction={sendEmail}
+                          title="Neem contact met ons op"
+                          isSubmitted={isSubmitted}
+                          setIsSubmitted={setIsSubmitted}
+                    >
+                        <Input
+                            id="user_name"
+                            type="text"
+                            placeholder="Vul hier je naam in"
+                            required={true}
+                        />
+                        <Input
+                            id="user_email"
+                            type="email"
+                            placeholder="Vul hier je emailadres in"
+                            required={true}
+                        />
+                        <Input
+                            id="user_subject"
+                            type="text"
+                            placeholder="Vul hier het onderwerp van je bericht in"
+                            required={true}
+                        />
+                        <Input id="message"
+                               type="textarea"
+                               placeholder="Schrijf hier je bericht aan ons"
+                               required={true}/>
                         <Button
                             type={"submit"}
                             message="Versturen"/>
