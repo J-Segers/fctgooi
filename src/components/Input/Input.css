@@ -1,0 +1,27 @@
+.input-field {
+    background-color: var(--primary-color);
+    color: #BEBEBE;
+    margin: 10px 0 10px 0;
+    width: 100%;
+    padding: 10px 0 10px 10px;
+    border-radius: 10px;
+    /*outline: none;*/
+    -webkit-box-shadow: inset #ddd 1px 1px 2px;
+    -moz-box-shadow: inset #ddd 1px 1px 2px;
+    box-shadow: inset #ddd 2px 2px 2px;
+    border: none;
+}
+
+.input-field:focus {
+    background-color: white;
+    outline: none;
+}
+
+.input-field::placeholder {
+    color: lightgray;
+}
+
+textarea {
+    min-height: 6.25rem;
+    border: none;
+}

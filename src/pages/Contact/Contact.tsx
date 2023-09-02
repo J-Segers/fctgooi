@@ -4,6 +4,7 @@ import MailService from "../../services/mailService";
 import './Contact.css';
 import Header from "../../components/header/Header";
 import {useNavigate} from "react-router-dom";
+import Input from "../../components/Input/Input";
 
 function Contact() {
     const [isSent, setIsSent] = useState<boolean>(false);
@@ -39,42 +40,33 @@ function Contact() {
                                 <div className="contact-form">
                                     <form ref={form} onSubmit={sendEmail} className="form">
                                         <div className="form-control">
-                                            <input
-                                                type="text"
+                                            <Input
                                                 id="user_name"
-                                                name="user_name"
+                                                type="text"
                                                 placeholder="Vul hier je naam in"
-                                                className="input-field"
-                                                required
-                                            ></input>
+                                                required={true}
+                                            />
                                         </div>
                                         <div className="form-control">
-                                            <input
-                                                type="email"
+                                            <Input
                                                 id="user_email"
-                                                name="user_email"
+                                                type="email"
                                                 placeholder="Vul hier je emailadres in"
-                                                className="input-field"
-                                                required
+                                                required={true}
                                             />
                                         </div><div className="form-control">
-                                        <input
-                                            type="text"
+                                        <Input
                                             id="user_subject"
-                                            name="user_subject"
+                                            type="text"
                                             placeholder="Vul hier het onderwerp van je bericht in"
-                                            className="input-field"
-                                            required
+                                            required={true}
                                         />
                                     </div>
                                         <div className="form-control">
-                                    <textarea
-                                        id="message"
-                                        placeholder="Schrijf hier je bericht aan ons"
-                                        name="message"
-                                        className="input-field"
-                                        required
-                                    ></textarea>
+                                    <Input id="message"
+                                           type="textarea"
+                                           placeholder="Schrijf hier je bericht aan ons"
+                                           required={true}/>
                                         </div>
                                         <button type="submit" value="Send" className={'submit-btn'}>
                                             Versturen
