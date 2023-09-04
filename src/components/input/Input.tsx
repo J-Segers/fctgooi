@@ -25,6 +25,7 @@ function Input(props: {
                 name={props.id}
                 placeholder={props.placeholder}
                 className="input-field"
+                autoComplete={"off"}
                 required={props.required}
             ></input>
         );

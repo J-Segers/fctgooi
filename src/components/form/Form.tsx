@@ -1,12 +1,11 @@
-import React, {RefObject} from 'react';
-import PropTypes from 'prop-types';
+import React, {RefObject} from "react";
+import PropTypes from "prop-types";
 import Spacer from "../spacer/Spacer";
 
-import './Form.css';
+import "./Form.css";
 
 Form.propTypes = {
     title: PropTypes.string.isRequired,
-    children: PropTypes.node.isRequired
 };
 
 function Form(
@@ -17,8 +16,7 @@ function Form(
         setIsSubmitted: any,
         children: any,
         submitAction: any,
-    }
-) {
+    }) {
     return (
         <section className="contact">
             <div className="spacer-form-container">
