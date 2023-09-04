@@ -1,8 +1,9 @@
 import React from 'react';
 import "./Header.css";
-import phLogo from "../../assets/logoKlein.gif";
+import logo from "../../assets/logo.svg";
 import PropTypes from 'prop-types';
 import NavBar from '../navBar/NavBar';
+import { Link } from 'react-router-dom';
 
 Header.propTypes = {
     
@@ -13,7 +14,7 @@ function Header() {
     return (
         <header>
             <div id="header-container">
-                <img src={phLogo} alt="" />
+                <Link to={"/"}><img src={logo} alt="" /></Link>
                 <NavBar />
             </div>
         </header>

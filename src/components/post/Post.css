@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin: 50px auto;
+    margin: 50px 0;
 }
 
 .preview, .preview img {
@@ -25,7 +25,7 @@ hr {
     width: 100px;
     height: 0px;
     border: 1px solid var(--secundary-color); 
-    margin: 8px 25px 8px 100px;
+    margin: 0;
 }
 
 .post-container .info h2 {
@@ -36,9 +36,10 @@ hr {
 @media only screen and (min-width: 992px) {
     .post-container {
         width: 1100px;
-        height: 800px;
+        height: 400px;
         flex-direction: row;
         justify-content: center;
+        margin: 100px 0;
     }
     
     .preview, .preview img {
@@ -58,11 +59,27 @@ hr {
         width: 100px;
         height: 0px;
         border: 1px solid var(--secundary-color); 
-        margin-left: 100px;
     }
     
-    .post-container .info h2 {
+    .left {
+        margin: 0 25px 0 100px;
+    }
+
+    .right {
+        margin: 0 100px 0 25px;
+    }
+    
+    .info h2 {
+        width: 273px;
         margin: 0;
         padding: 0;
     }
+
+    .info, .info h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
 }

@@ -1,31 +1,45 @@
 import React from 'react';
 import "./Post.css"
 
-import img from "../../assets/Jan Vogelzangweb villa~deste~1 met herfstkleurvogel en bloemen defi 1 laag-.jpg"
-import PropTypes from 'prop-types';
+import PropTypes, {InferProps} from 'prop-types';
 
 Post.propTypes = {
-    
+    title: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+    orientation: PropTypes.string.isRequired,
 };
 
-function Post() {
+function Post({title, img, orientation}: InferProps<typeof Post.propTypes>) {
 
-    const post = {
-        title: "De beste club 2023",
-        img: img
-    }
+    
 
     return (
-        <article className="post-container">
-            <section className="preview">
-                <img src={img} alt="" />
-            </section>
-            <hr />
-            <section className="info">
-                <h2>{post.title}</h2>
-                {"Evenement: 'Test'"}
-            </section>
-        </article>
+        <>
+            {orientation === "left" ? 
+                <article className={`post-container .${orientation}`}>
+                    <section className="preview">
+                        <img src={img} alt="" />
+                    </section>
+                    <hr className='left' />
+                    <section className="info">
+                        <h2>{title}</h2>
+                        {"Evenement: 'Test'"}
+                    </section>
+                </article>
+                :
+                <article className={`post-container .${orientation}`}>
+                    <section className="info">
+                        <h2>{title}</h2>
+                        {"Evenement: 'Test'"}
+                    </section>
+                    <hr className='right' />
+                    <section className="preview">
+                        <img src={img} alt="" />
+                    </section>
+                
+                </article>
+            }
+        </>
     );
 }
 

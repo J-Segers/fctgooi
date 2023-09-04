@@ -14,7 +14,7 @@ function NavBar() {
     return (
         <div id="nav-container">
             <nav className={isOpen ? "open" : "closed"}>
-                <Link to="/home">Home</Link>
+                <Link to="/">Home</Link>
                 <Link to="#" className="drop">Club</Link>
                 <Link to="/galerij">Fotogalerij</Link>
                 <Link to="/contact">Contact</Link>
