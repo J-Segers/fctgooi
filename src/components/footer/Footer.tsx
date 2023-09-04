@@ -27,7 +27,7 @@ function Footer() {
             </section>
             <section className="meet">
                 Volgende bijeenkomst:<br />
-                10 - sept - 2023
+                <span>10 - sept - 2023</span>
             </section>
         </footer>
     );
