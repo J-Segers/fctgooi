@@ -6,6 +6,7 @@ import Input from "../../components/input/Input";
 import Button from "../../components/button/Button";
 import MailService from "../../services/mailService";
 import {useNavigate} from "react-router-dom";
+import InstaFeeds from "../../services/instaService";
 
 
 function Contact() {
@@ -78,7 +79,7 @@ function Contact() {
                 {/*    </iframe>*/}
                 {/*</section>*/}
 
-
+<InstaFeeds />
             </div>
 
         </>
