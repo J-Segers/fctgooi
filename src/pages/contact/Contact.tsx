@@ -79,7 +79,6 @@ function Contact() {
                 {/*    </iframe>*/}
                 {/*</section>*/}
 
-<InstaFeeds />
             </div>
 
         </>
