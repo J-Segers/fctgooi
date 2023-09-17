@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Post.css"
+import "./Preview.css"
 
 import PropTypes, {InferProps} from 'prop-types';
 
