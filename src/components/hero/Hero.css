@@ -102,15 +102,13 @@
         height: 100px;
         display: grid;
         grid-template-columns: 20px 80px 10px 260px 20px;
-        grid-template-rows: 5px 35px 25px 25px 10px 100px 20px;
+        grid-template-rows: 5px 35px 25px 25px 10px;
         grid-template-areas: 
         "img img . . ."
         "img img . title ."
         "img img . fg ."
-        "img img . event ."
-        "img img . . ."
-        ". specs specs specs ."
-        ". . . . .";
+        "img img . specs ."
+        "img img . . .";
         border-radius: 50px;
         position: absolute;
         top: 25px;
@@ -132,14 +130,11 @@
     }
 
     .maand-info, .maand-info:hover {
-        transition: 
-        width 250ms ease-in-out 250ms,
-        height 250ms ease-in-out 250ms;
+        transition: width 250ms ease-in-out 250ms;
     }
 
     .maand-info:hover {
         width: 390px;
-        height: 220px;
     }
 
     .maand-info:hover h2,

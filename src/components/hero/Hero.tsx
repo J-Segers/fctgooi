@@ -3,19 +3,25 @@ import "./Hero.css";
 import info from "../../assets/Information-Icon.svg";
 import foto from "../../assets/Bob Altena-.jpg"
 import PropTypes from 'prop-types';
+import { prototype } from 'events';
 
 Hero.propTypes = {
     
 };
 
+interface heroObj {
+    foto: string,
+    fotograaf: string,
+    info: string,
+}
+
 function Hero() {
 
 
-    const maandFoto = {
+    const maandFoto: heroObj = {
         foto: foto,
-        fotograaf: "Pieter Post",
-        evenement: "club wedstrijd",
-        opmerking: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        fotograaf: "Bob Altena",
+        info: "Macro foto gemaakt met telefoon"
     }
 
     return (
@@ -24,9 +30,8 @@ function Hero() {
                 <img src={info} alt="" />
                 <h2>Foto van de Maand</h2>
                 <div className="fotograaf"><span>Gemaakt door:</span>{` ${maandFoto?.fotograaf}.`}</div>
-                <div className="evenement"><span>Evenement:</span>{` ${maandFoto?.evenement}.`}</div>
                 <div className="info-specs">
-                   {`${maandFoto?.opmerking}`}
+                   {`${maandFoto?.info}`}
                 </div>
             </div>
             <div className='hero-image-container'>
