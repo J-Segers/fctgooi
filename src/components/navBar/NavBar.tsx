@@ -15,7 +15,7 @@ function NavBar() {
         <div id="nav-container">
             <nav className={isOpen ? "open" : "closed"}>
                 <Link to="/">Home</Link>
-                <Link to="#" className="drop">Club</Link>
+                <Link to="/club" className="drop">Club</Link>
                 <Link to="/galerij">Fotogalerij</Link>
                 <a href="mailto:info@fctgooi.nl" className="contact">Contact</a>
             </nav>

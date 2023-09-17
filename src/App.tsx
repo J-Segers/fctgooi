@@ -4,6 +4,7 @@ import Header from './components/header/Header';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Footer from './components/footer/Footer';
+import UnderConstruction from './pages/underConstruction/UnderConstruction';
 
 function App() {
   return (
@@ -12,10 +13,9 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path='/galerij' element={<Galerij />} />
-          <Route path='/galerij' element={<Galerij />} />
-          <Route path='/galerij' element={<Galerij />} />
-          <Route path='/galerij' element={<Galerij />} /> */}
+          <Route path='/club' element={<UnderConstruction />} />
+          <Route path='/galerij' element={<UnderConstruction />} />
+          <Route path='/contact' element={<UnderConstruction />} />
         </Routes>
 
     </BrowserRouter>
