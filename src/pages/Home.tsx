@@ -1,43 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Header from '../components/header/Header';
 import Hero from '../components/hero/Hero';
 import "./Home.css";
 import Footer from '../components/footer/Footer';
 import Spacer from '../components/spacer/Spacer';
 import Post from '../components/post/Post';
-import placeholder1 from "../assets/Jan Vogelzangweb villa~deste~1 met herfstkleurvogel en bloemen defi 1 laag-.jpg";
-import placeholder2 from "../assets/Wendy van Kuler-2.jpg";
-
-interface Obj {
-    title: string,
-    img: string
-}
-
-
+import dataArr from "../data/homeData";
 function Home() {
 
     let count: number = 0;
     let orientation: string = "left";
 
-
-    const placeHolderArray: Array<Obj> = [
-        {
-            title: "De Beste Club 2023",
-            img: placeholder1
-        },
-        {
-            title: "Natuur",
-            img: placeholder2
-        },
-        {
-            title: "De Beste Club 2023",
-            img: placeholder1
-        },
-        {
-            title: "Natuur",
-            img: placeholder2
-        }
-    ];   
+    interface Obj {
+        title: string,
+        img: string
+    }
+       
 
     function changeOrientation() {
         if(orientation === "left") {
@@ -67,7 +45,7 @@ function Home() {
                 </section>
                 <Spacer />
                 <section className="recente-activiteiten">
-                    {placeHolderArray.map((obj: Obj) => {
+                    {dataArr.map((obj: Obj) => {
 
                         let currentOrientation = orientation;
                         let currentCount = count;
@@ -75,7 +53,7 @@ function Home() {
                         changeOrientation();
                         count++;
 
-                        if(count === placeHolderArray.length){
+                        if(count === dataArr.length){
                             return <Post title={obj.title} img={obj.img} orientation={currentOrientation} key={currentCount}/>;
                         }
 
