@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./Footer.css";
 import instagram from "../../assets/instagram-icon.svg";
 import facebook from "../../assets/facebook-icon.svg";
 import PropTypes from 'prop-types';
+import { getNextMeeting } from '../../helperFunctions/nextmeet';
 
 Footer.propTypes = {
     
 };
 
 function Footer() {
+
+    let meeting: Date = new Date();
+
     return (
         <footer>
             <section className="adres">
@@ -27,7 +31,7 @@ function Footer() {
             </section>
             <section className="meet">
                 Volgende bijeenkomst:<br />
-                <span>10 - sept - 2023</span>
+                <span>{`${getNextMeeting().toLocaleDateString()}`}</span>
             </section>
         </footer>
     );
