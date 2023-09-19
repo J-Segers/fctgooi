@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from '../components/header/Header';
-import Hero from '../components/hero/Hero';
+import Header from '../../components/header/Header';
+import Hero from '../../components/hero/Hero';
 import "./Home.css";
-import Footer from '../components/footer/Footer';
-import Spacer from '../components/spacer/Spacer';
-import Post from '../components/preview/Preview';
-import dataArr from "../data/homeData";
+import Footer from '../../components/footer/Footer';
+import Spacer from '../../components/spacer/Spacer';
+import Post from '../../components/preview/Preview';
+import dataArr from "../../data/homeData";
 function Home() {
 
     let count: number = 0;
