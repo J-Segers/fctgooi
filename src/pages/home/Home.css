@@ -13,16 +13,17 @@ main {
 }
 
 #club-info {
-    width: 600px;
+    width: auto;
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 100px 0;
+    margin: 50px 25px;
 }
 
 #club-info h1 {
+    text-align: center;
     font-size: 4rem;
     color: var(--accent-text)
 }
@@ -36,4 +37,46 @@ main {
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+    #home-container {
+        width: 100%;
+        height: auto;
+    }
+    
+    main {
+        width: 100%;
+        min-height: calc(100vh - 300px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #club-info {
+        width: 600px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 100px 0;
+    }
+    
+    #club-info h1 {
+        font-size: 4rem;
+        color: var(--accent-text)
+    }
+    
+    #club-info p {
+        text-align: center;
+    }
+    
+    .recente-activiteiten {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+    }
 }
