@@ -1,0 +1,14 @@
+/* root variables */
+:root {
+    --primary-color: #eee;
+    --secundary-color: #0d2243;
+    --primary-text: #0f0f0f;
+    --secundary-text: #efefef;
+    --accent-text: #0d2243;
+}
+
+:root {
+    box-sizing: content-box;
+    background-color: var(--primary-color);
+}
+
