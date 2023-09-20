@@ -2,33 +2,43 @@
  * tijdelijke oplossing voor updaten datum tot de backend werkt.
  */
 
-const initial_meeting = new Date(2023, 8, 6, 20, 0);
-let previous_meeting = initial_meeting;
+import { log } from "console";
+
+const initial_meeting = new Date(2023, 8, 6, 21);
+let previous_meeting = new Date(initial_meeting);
 let next_meeting = getNextDate();
 
-export function getNextMeeting(): Date {
+export function getNextMeeting(): String {
 
     const today = new Date();
 
-    // check of de previous_meeting is geweest en update de next_meeting variabele
-
-    
-
     while(true) {
-        if(today.getDate() === next_meeting.getDate() && today.getTime() > next_meeting.getTime()) {
+
+        // check of de previous_meeting is geweest en update de next_meeting variabele
+        if(today.getMonth() > next_meeting.getMonth()){
             
             updateMeetingDate();
-            
-        } else if(today.getDate() > next_meeting.getDate()){
-           
+
+        } else if(today.getDate() > next_meeting.getDate()) {
+
             updateMeetingDate();
 
         } else {
+
             break;
+
         }
     }    
     
-    return next_meeting
+    if(today.getDate() === next_meeting.getDate()) {
+
+        return "Vandaag";
+            
+    } else {
+
+        return `${next_meeting.getDate()}-${next_meeting.getMonth()}-${next_meeting.getFullYear()}`;
+
+    }
 
 }
 
@@ -52,6 +62,6 @@ function getNextDate(): Date {
     const minutes = previous_meeting.getMinutes();
     
     // oude datum + fortnight (14 dagen) == nieuwe datum
-    return new Date(year, month, (day + 14), hour, minutes);
+    return new Date(year, month, day + 14, hour, minutes);
 
 }

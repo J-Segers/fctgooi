@@ -23,7 +23,7 @@ function Footer() {
             </section>
             <section className="meet">
                 Volgende bijeenkomst:<br />
-                <span>{`${getNextMeeting().toLocaleDateString()}`}</span>
+                <span>{`${getNextMeeting()}`}</span>
             </section>
         </footer>
     );
