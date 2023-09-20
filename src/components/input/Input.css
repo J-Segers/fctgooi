@@ -1,9 +1,11 @@
 .input-field {
+    box-sizing: content-box;
     background-color: var(--primary-color);
     color: #BEBEBE;
-    margin: 10px 0 10px 0;
-    width: 100%;
-    padding: 10px 0 10px 10px;
+    margin: 10px 0;
+    width: 95%;
+    height: 1.75rem;
+    padding-left: .5rem;
     border-radius: 10px;
     outline: none;
     -webkit-box-shadow: inset #ddd 1px 1px 2px;
@@ -29,4 +31,12 @@
 textarea {
     min-height: 6.25rem;
     border: none;
+}
+
+
+@media only screen and (min-width: 992px) {
+    .input-field {
+        width: 100%;
+    }
+
 }

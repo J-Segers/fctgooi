@@ -1,10 +1,10 @@
-import emailjs from '@emailjs/browser';
+import emailJs from '@emailjs/browser';
 
 class EmailService {
 
     async sendEmail(form: HTMLFormElement): Promise<any> {
         // @ts-ignore
-        return emailjs.sendForm(process.env.REACT_APP_MAILJS_SERVICE_ID,
+        return emailJs.sendForm(process.env.REACT_APP_MAILJS_SERVICE_ID,
             process.env.REACT_APP_MAILJS_TEMPLATE_ID,
             form.current,
             process.env.REACT_APP_MAILJS_PUBLIC_KEY)
