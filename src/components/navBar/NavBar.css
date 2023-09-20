@@ -8,7 +8,7 @@ nav {
     position: absolute;
     list-style-type: none;
     top: 100px;
-    right: 80px;
+    right: 1px;
 }
 
 nav a {
@@ -42,7 +42,7 @@ nav a:hover {
     width: 31px;
     height: 31px;
     position: relative;
-    right: 100px;
+    right: 25px;
     border: 1px solid white;
 }
 

@@ -18,9 +18,38 @@ header {
 }
 
 #header-container a {
-    margin-left: 100px;
+    margin-left: 25px;
 }
 
 #header-container img {
     width: 90px;
+}
+
+@media only screen and (min-width: 786px) {
+    header {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--secundary-color);
+        position: sticky;
+        top: 0;
+    }
+    
+    #header-container {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #header-container a {
+        margin-left: 100px;
+    }
+    
+    #header-container img {
+        width: 90px;
+    }
 }
