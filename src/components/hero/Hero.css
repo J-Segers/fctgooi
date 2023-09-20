@@ -20,18 +20,15 @@
 
 .maand-info {
     width: 100%;
-    height: 100px;
+    height: auto;
     display: grid;
     grid-template-columns: 2% 50px 2% 25% 2% auto 2%;
-    grid-template-rows: 5% 25% 2% 19% 19% 5%;
+    grid-template-rows: 49% 2% 49%;
     grid-template-areas: 
-        " . . . . . . . "
+        " . img . title . fg . "
         " . img . title . specs . "
-        " . img . . . specs . "
-        " . img . fg . specs . "
-        " . img . event . specs . "
-        " . . . . . . . ";
-    gap: 2%;
+        " . img . title . specs . ";
+
     background-color: rgba(238, 238, 238, 0.5);
     box-shadow: 5px;
     transition: none;
@@ -39,6 +36,7 @@
     position: absolute;
     top: 0;
     z-index: 10;
+    padding: 2%
 }
 
 .maand-info img {
@@ -59,10 +57,12 @@
     margin: 0;
     padding: 0;
     grid-area: title;
+    line-height: .9;
 }
 
 .fotograaf {
     grid-area: fg;
+    line-height: .8;
 }
 
 .evenement {
@@ -71,6 +71,7 @@
 
 .info-specs {
     grid-area: specs;
+    line-height: .8;
 }
 
 .fotograaf span, .evenement span {
