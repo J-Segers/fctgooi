@@ -1,14 +1,14 @@
 import React from 'react';
-import "./Header.css";
+import "./HeaderComponent.css";
 import phLogo from "../../assets/logoKlein.gif";
 import PropTypes from 'prop-types';
 import NavBar from '../navBar/NavBar';
 
-Header.propTypes = {
+HeaderComponent.propTypes = {
     
 };
 
-function Header() {
+function HeaderComponent() {
 
     return (
         <header>
@@ -21,4 +21,4 @@ function Header() {
     
 }
 
-export default Header;
+export default HeaderComponent;

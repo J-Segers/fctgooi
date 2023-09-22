@@ -1,7 +1,7 @@
 import React from 'react';
-import './Input.css';
+import './InputComponent.css';
 
-function Input(props: {
+function InputComponent(props: {
     id: string,
     type: string,
     placeholder: string,
@@ -31,11 +31,11 @@ function Input(props: {
     }
 }
 
-export default Input;
+export default InputComponent;
 
 
-// <div className="form-control">
-//     <Input
+// <div className="formComponent-control">
+//     <InputComponent
 //         id="user_name"
 //         type="text"
 //         placeholder="Vul hier je naam in"

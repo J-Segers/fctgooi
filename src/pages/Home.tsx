@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from '../components/header/Header';
+import HeaderComponent from '../components/headerComponent/HeaderComponent';
 import Hero from '../components/hero/Hero';
 import "./Home.css";
-import Footer from '../components/footer/Footer';
+import FooterComponent from '../components/footerComponent/FooterComponent';
 import Spacer from '../components/spacer/Spacer';
 import Post from '../components/post/Post';
 
@@ -11,7 +11,7 @@ function Home() {
     return (
         <div id={"home-container"}>
             <Hero />
-            <Header />
+            <HeaderComponent />
             <main>
                 <section className="recente-activiteiten">
                     <Post />
@@ -24,7 +24,7 @@ function Home() {
                     </article>
                 </section>
             </main>
-            <Footer />
+            <FooterComponent />
         </div>
     );
 }

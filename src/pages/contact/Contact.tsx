@@ -1,11 +1,12 @@
 import React, {useRef, useState} from 'react';
 import './Contact.css';
-import Header from "../../components/header/Header";
-import Form from "../../components/form/Form";
-import Input from "../../components/input/Input";
-import Button from "../../components/button/Button";
+import HeaderComponent from "../../components/headerComponent/HeaderComponent";
+import FormComponent from "../../components/formComponent/FormComponent";
+import InputComponent from "../../components/inputComponent/InputComponent";
+import ButtonComponent from "../../components/buttonComponent/ButtonComponent";
 import MailService from "../../services/mailService";
 import {useNavigate} from "react-router-dom";
+import FooterComponent from "../../components/footerComponent/FooterComponent";
 
 
 function Contact() {
@@ -29,42 +30,42 @@ function Contact() {
 
     return (
         <>
-            <Header/>
-            <div className={`container`}>
+            <HeaderComponent/>
+
                 {!isSubmitted ?
-                    <Form form={form}
-                          submitAction={sendEmail}
-                          title="Neem contact met ons op"
-                          isSubmitted={isSubmitted}
-                          setIsSubmitted={setIsSubmitted}
+                    <FormComponent form={form}
+                                   submitAction={sendEmail}
+                                   title="Neem contact met ons op"
+                                   isSubmitted={isSubmitted}
+                                   setIsSubmitted={setIsSubmitted}
                     >
-                        <Input
+                        <InputComponent
                             id="user_name"
                             type="text"
                             placeholder="Vul hier je naam in"
                             required={true}
                         />
-                        <Input
+                        <InputComponent
                             id="user_email"
                             type="email"
                             placeholder="Vul hier je emailadres in"
                             required={true}
                         />
-                        <Input
+                        <InputComponent
                             id="user_subject"
                             type="text"
                             placeholder="Vul hier het onderwerp van je bericht in"
                             required={true}
                         />
-                        <Input id="message"
-                               type="textarea"
-                               placeholder="Schrijf hier je bericht aan ons"
-                               required={true}/>
-                        <Button
+                        <InputComponent id="message"
+                                        type="textarea"
+                                        placeholder="Schrijf hier je bericht aan ons"
+                                        required={true}/>
+                        <ButtonComponent
                             type={"submit"}
                             message="Versturen"/>
 
-                    </Form>
+                    </FormComponent>
                     :
                     <section className={`form-section`}>
 
@@ -85,8 +86,8 @@ function Contact() {
                 {/*</section>*/}
 
 
-            </div>
 
+            <FooterComponent/>
         </>
     );
 }
