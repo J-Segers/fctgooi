@@ -1,10 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import "./Footer.css";
 import instagram from "../../assets/instagram-icon.svg";
 import facebook from "../../assets/facebook-icon.svg";
 import { getNextMeeting } from '../../helperFunctions/nextmeet';
-import CalendarService from "../../services/CalendarService";
-import ICalendarItem from "../../models/calendarItem";
 
 function Footer() {
 
