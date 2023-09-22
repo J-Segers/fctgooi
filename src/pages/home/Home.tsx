@@ -15,7 +15,6 @@ function Home() {
         title: string,
         img: string
     }
-       
 
     function changeOrientation() {
         if(orientation === "left") {
