@@ -1,7 +1,7 @@
 import React from 'react';
-import './Button.css';
+import './ButtonComponent.css';
 
-function Button(props: {
+function ButtonComponent(props: {
     message: string,
     type: string,
     onClick?: any,
@@ -21,4 +21,4 @@ function Button(props: {
     }
 }
 
-export default Button;
+export default ButtonComponent;

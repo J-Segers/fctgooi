@@ -1,14 +1,14 @@
 import React from 'react';
-import "./Footer.css";
+import "./FooterComponent.css";
 import instagram from "../../assets/instagram-icon.svg";
 import facebook from "../../assets/facebook-icon.svg";
 import PropTypes from 'prop-types';
 
-Footer.propTypes = {
+FooterComponent.propTypes = {
     
 };
 
-function Footer() {
+function FooterComponent() {
     return (
         <footer>
             <section className="adres">
@@ -29,4 +29,4 @@ function Footer() {
     );
 }
 
-export default Footer;
+export default FooterComponent;

@@ -5,15 +5,13 @@ import Form from "../../components/form/Form";
 import Input from "../../components/input/Input";
 import Button from "../../components/button/Button";
 import MailService from "../../services/mailService";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 
 function Contact() {
     const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
     const form: any = useRef<HTMLFormElement>(null);
     const navigate = useNavigate();
-
-    const LOCATION = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4886.2026720722515!2d5.179591000000001!3d52.241543!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c66b4e1624c3bb%3A0x6655cb80e60622c0!2sWoondienstencentrum%20Lopes%20Dias!5e0!3m2!1snl!2snl!4v1692459524624!5m2!1snl!2snl";
 
     function sendEmail(e: any): void {
         e.preventDefault();
@@ -31,11 +29,8 @@ function Contact() {
 
     return (
         <>
-
             <Header/>
-
             <div className={`container`}>
-
                 {!isSubmitted ?
                     <Form form={form}
                           submitAction={sendEmail}
@@ -64,12 +59,10 @@ function Contact() {
                         <Input id="message"
                                type="textarea"
                                placeholder="Schrijf hier je bericht aan ons"
-                               required={true}
-                        />
+                               required={true}/>
                         <Button
                             type={"submit"}
-                            message="Versturen"
-                        />
+                            message="Versturen"/>
 
                     </Form>
                     :
@@ -80,23 +73,17 @@ function Contact() {
                     </section>
                 }
 
-                <section className={`whereToFind-section`}>
+                {/*<section className={`whereToFind-section`}>*/}
+                {/*    <iframe*/}
+                {/*        title={`whereToFind`}*/}
+                {/*        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4886.2026720722515!2d5.179591000000001!3d52.241543!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c66b4e1624c3bb%3A0x6655cb80e60622c0!2sWoondienstencentrum%20Lopes%20Dias!5e0!3m2!1snl!2snl!4v1692459524624!5m2!1snl!2snl"*/}
+                {/*        width="400"*/}
+                {/*        height="300"*/}
+                {/*        loading="lazy"*/}
+                {/*        referrerPolicy="no-referrer-when-downgrade">*/}
+                {/*    </iframe>*/}
+                {/*</section>*/}
 
-                    <iframe
-                        title={`whereToFind`}
-                        src={LOCATION}
-                        width="400"
-                        height="300"
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade">
-                    </iframe>
-
-                    <Link to={LOCATION}
-                          id={"locatie"}>
-                        directies
-                    </Link>
-
-                </section>
 
             </div>
 

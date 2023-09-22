@@ -2,14 +2,14 @@ import React, {RefObject} from 'react';
 import PropTypes from 'prop-types';
 import Spacer from "../spacer/Spacer";
 
-import './Form.css';
+import './FormComponent.css';
 
-Form.propTypes = {
+FormComponent.propTypes = {
     title: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired
 };
 
-function Form(
+function FormComponent(
     props: {
         title: string,
         form: RefObject<HTMLFormElement>,
@@ -37,4 +37,4 @@ function Form(
     );
 }
 
-export default Form;
+export default FormComponent;
