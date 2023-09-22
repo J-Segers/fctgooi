@@ -20,7 +20,6 @@ function FormComponent(
     }
 ) {
     return (
-        <section className="contact">
             <div className="spacer-form-container">
                 <Spacer/>
                 <div className="contact-form-container">
@@ -33,7 +32,6 @@ function FormComponent(
                 </div>
                 <Spacer/>
             </div>
-        </section>
     );
 }
 
