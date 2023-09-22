@@ -1,35 +1,25 @@
-import React, {createContext, useEffect, useState} from 'react';
-import ICalendarItem from "../models/calendarItem";
+import React, {createContext, useEffect, useState} from 'react'
 import CalendarService from "../services/CalendarService";
-import PropTypes from "prop-types";
+import ICalendarItem from "../models/calendarItem";
 
-export const CalendarContext = createContext({});
+export const CalendarContext = createContext<ICalendarItem[]>([])
 
-CalendarContextProvider.propTypes = {
-    children: PropTypes.node.isRequired
-}
-function CalendarContextProvider(props: {children: any}) {
-    const [items, setItems] = useState<ICalendarItem[]>([])
+// @ts-ignore
+export function CalendarProvider({children}) {
+    const [agendaItems, setAgendaItems] = useState<Array<ICalendarItem>>([])
 
     useEffect(() => {
-        getItems().catch(e => console.error(e));
+        CalendarService
+            .getAll()
+            .then(res => setAgendaItems(res))
+            .catch(e => console.error(e))
     }, []);
 
-    async function getItems() {
-        await CalendarService.getAll()
-            .then(res => setItems(res))
-            .catch(e => console.error(e))
-    }
 
-    const contextData = {
-        calendarItems: items,
-    };
 
     return (
-        <CalendarContext.Provider value={contextData}>
-            {props.children}
+        <CalendarContext.Provider value={agendaItems}>
+            {children}
         </CalendarContext.Provider>
-    );
+    )
 }
-
-export default CalendarContextProvider;
