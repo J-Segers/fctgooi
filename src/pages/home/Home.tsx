@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Header from '../../components/header/Header';
 import Hero from '../../components/hero/Hero';
 import "./Home.css";
@@ -6,9 +6,11 @@ import Footer from '../../components/footer/Footer';
 import Spacer from '../../components/spacer/Spacer';
 import Post from '../../components/preview/Preview';
 import dataArr from "../../data/homeData";
+import EventService from "../../services/EventService";
+import IEvent from "../../models/eventItem";
 
 function Home() {
-
+    const [events, setEvents] = useState<Array<IEvent>>([])
     let count: number = 0;
     let orientation: string = "left";
 
@@ -16,6 +18,16 @@ function Home() {
         title: string,
         img: string
     }
+
+    useEffect(() => {
+        EventService
+            .getAll()
+            .then((res) => {
+                setEvents(res)
+                console.log(res)
+            })
+            .catch((e) => console.error(e))
+    }, []);
 
     function changeOrientation() {
         if(orientation === "left") {

@@ -16,7 +16,7 @@ import {
 
 const ref = collection(db, 'calendar')
 
-class FirebaseService {
+class CalendarService {
 
     async getAll(): Promise<Array<IKalenderItem>> {
         const snapshot = await getDocs(ref)
@@ -81,5 +81,5 @@ class FirebaseService {
 
 }
 
-const firebaseService = new FirebaseService();
-export default firebaseService;
+const calendarService = new CalendarService();
+export default calendarService;

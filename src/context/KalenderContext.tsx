@@ -1,5 +1,5 @@
 import React, {createContext, useEffect, useState} from 'react'
-import FirebaseService from "../services/FirebaseService";
+import FirebaseService from "../services/CalendarService";
 import IKalenderItem from "../models/kalenderItem";
 
 export const KalenderContext = createContext<IKalenderItem[]>([])

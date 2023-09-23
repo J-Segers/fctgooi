@@ -4,7 +4,7 @@ import instagram from "../../assets/instagram-icon.svg";
 import facebook from "../../assets/facebook-icon.svg";
 import {KalenderContext} from "../../context/KalenderContext";
 import IKalenderItem from "../../models/kalenderItem";
-import {NavLink, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 function Footer() {
 
