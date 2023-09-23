@@ -1,19 +1,12 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, { useContext } from 'react';
 import "./Footer.css";
 import instagram from "../../assets/instagram-icon.svg";
 import facebook from "../../assets/facebook-icon.svg";
-import {CalendarContext} from "../../context/CalendarContext";
+import {KalenderContext} from "../../context/KalenderContext";
+import IKalenderItem from "../../models/kalenderItem";
 
 function Footer() {
-    const  agendaItems  = useContext(CalendarContext);
-
-    function stringToNumber(str: string): number {
-       return parseInt(str.split("-").reverse().join(""));
-    }
-
-    const sortedAgendaItems = agendaItems.sort((a, b) => {
-        return stringToNumber(a.datum) - stringToNumber(b.datum)
-    })
+    const agendaItems: IKalenderItem[] = useContext(KalenderContext);
 
     return (
         <footer>
@@ -33,7 +26,7 @@ function Footer() {
             </section>
             <section className="meet">
                 Volgende bijeenkomst:<br />
-                <span>{sortedAgendaItems[0]?.datum}</span>
+                <span>{agendaItems[0]?.datum}</span>
             </section>
         </footer>
     );

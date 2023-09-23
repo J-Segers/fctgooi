@@ -1,10 +1,10 @@
-export default interface ICalendarItem {
-    id?: string,
+export default interface IKalenderItem {
+    id: string,
     datum: string,
-    type: string,
+    soort: string,
     activiteit: string,
     geweest: boolean,
-    opmerkingen: string,
+    bijzonderheden: string,
     link: string,
     createdAt?: string,
     createdBy?: string,

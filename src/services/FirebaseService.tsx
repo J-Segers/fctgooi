@@ -1,5 +1,5 @@
 import {auth, db} from "../config/firebase";
-import ICalendarItem from "../models/calendarItem";
+import IKalenderItem from "../models/kalenderItem";
 
 import {
     collection,
@@ -16,10 +16,11 @@ import {
 
 const ref = collection(db, 'calendar')
 
-class CalendarService {
+class FirebaseService {
 
-    async getAll(): Promise<Array<ICalendarItem>> {
-        const snapshot = await getDocs(ref)
+    async getAll(ref: string): Promise<Array<IKalenderItem>> {
+        const reference = collection(db, ref)
+        const snapshot = await getDocs(reference)
         const data: Array<any> = [];
         snapshot.docs.map((item) => {
             return data.push({
@@ -27,23 +28,23 @@ class CalendarService {
                 ...item.data(),
             });
         });
-        return data as Array<ICalendarItem>;
+        return data as Array<IKalenderItem>;
     };
 
-    async create(item: ICalendarItem): Promise<any> {
+    async create(item: IKalenderItem): Promise<any> {
         return await addDoc(collection(db, "calendar"), {
             datum: item.datum,
-            type: item.type,
+            soort: item.soort,
             activiteit: item.activiteit,
             geweest: item.geweest,
             link: item.link,
-            opmerkingen: item.opmerkingen,
+            bijzonderheden: item.bijzonderheden,
             createdBy: auth?.currentUser?.uid,
             createdAt: Date.now(),
         });
     }
 
-    async getByQuery(term: string): Promise<Array<ICalendarItem>> {
+    async getByQuery(term: string): Promise<Array<IKalenderItem>> {
         const queryTerm = query(ref, where('type', ">", term));
         const snapshot = await getDocs(queryTerm);
         const data: Array<any> = [];
@@ -53,7 +54,7 @@ class CalendarService {
                 ...event.data(),
             });
         });
-        return data as Array<ICalendarItem>;
+        return data as Array<IKalenderItem>;
     };
 
     async getOne(id: string): Promise<any> {
@@ -81,5 +82,5 @@ class CalendarService {
 
 }
 
-const calendarService = new CalendarService();
-export default calendarService;
+const firebaseService = new FirebaseService();
+export default firebaseService;

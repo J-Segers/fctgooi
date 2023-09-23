@@ -1,0 +1,7 @@
+#kalender-container {
+    width: 990px;
+    height: calc(100vh - 300px);
+    display: flex;
+    
+    flex-wrap: wrap;
+}

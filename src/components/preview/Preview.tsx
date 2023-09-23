@@ -10,10 +10,7 @@ Post.propTypes = {
 };
 
 function Post({title, img, orientation}: InferProps<typeof Post.propTypes>) {
-
-    
-
-    return (
+      return (
         <>
             {orientation === "left" ? 
                 <article className={`post-container .${orientation}`}>
@@ -36,7 +33,6 @@ function Post({title, img, orientation}: InferProps<typeof Post.propTypes>) {
                     <section className="preview">
                         <img src={img} alt="" />
                     </section>
-                
                 </article>
             }
         </>
