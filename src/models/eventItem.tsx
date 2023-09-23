@@ -1,3 +1,8 @@
+interface photo {
+    link: string,
+    alt: string
+}
+
 export default interface IEvent {
     id?: string,
     datum: string,
@@ -5,7 +10,7 @@ export default interface IEvent {
     beschrijving?: string,
     hero?: string,
     locatie: string,
-    photos: string[],
+    photos: photo[],
     createdAt?: string,
     createdBy?: string,
 }

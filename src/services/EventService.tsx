@@ -30,14 +30,14 @@ class EventService {
         return data as Array<IEvent>;
     };
 
-    async create(item: IEvent): Promise<any> {
+    async create(item: any): Promise<any> {
         return await addDoc(collection(db, "events"), {
-            datum: item.datum,
-            soort: "Clubtocht",
-            locatie: item.locatie,
-            beschrijving: "test",
+            datum: "01-01-2016",
+            soort: "DeBesteClub",
+            locatie: "",
+            beschrijving: "Foto's ingezonden door onze leden i.v.m. de Beste Club 2021",
             hero: "",
-            photos: item.photos,
+            photos: item,
             createdBy: "automated",
             createdAt: Date.now(),
         });
