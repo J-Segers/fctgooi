@@ -19,11 +19,10 @@ export function CalendarProvider({children} : CalendarProviderProps) {
         return stringToNumber(a.datum) - stringToNumber(b.datum)
     })
 
-
     useEffect(() => {
         FirebaseService
-            .getAll('calendar')
-            .then(res => setAgendaItems(res))
+            .getAll()
+            .then((res) => setAgendaItems(res))
             .catch(e => console.error(e))
     }, []);
 

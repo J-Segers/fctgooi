@@ -6,6 +6,7 @@ import Footer from '../../components/footer/Footer';
 import Spacer from '../../components/spacer/Spacer';
 import Post from '../../components/preview/Preview';
 import dataArr from "../../data/homeData";
+
 function Home() {
 
     let count: number = 0;

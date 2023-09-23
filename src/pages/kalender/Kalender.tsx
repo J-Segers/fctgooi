@@ -11,20 +11,27 @@ function Kalender() {
     const agendaItems: IKalenderItem[] = useContext(KalenderContext);
 
     return (
-        <div>
+        <div id={"kalender-pagina-container"}>
             <Header/>
+
             <div id="kalender-container">
-                {agendaItems && agendaItems.map(({id, soort, datum, bijzonderheden, activiteit}) => {
-                    return (
-                        <AgendaItem
-                            key={id}
-                            soort={soort}
-                            datum={datum}
-                            bijzonderheden={bijzonderheden}
-                            activiteit={activiteit}
-                        />
-                    )
-                })}
+                <h2>Agenda</h2>
+                <div id={"kalender-items"}>
+                    <AgendaItem soort={"Soort"} bijzonderheden={"Bijzonderheden"} activiteit={"Activiteit"} datum={"Datum"} />
+                    {agendaItems && agendaItems.map(({id, soort, datum, bijzonderheden, activiteit}) => {
+                        return (
+                            <>
+                                <AgendaItem
+                                    key={id}
+                                    soort={soort}
+                                    datum={datum}
+                                    bijzonderheden={bijzonderheden}
+                                    activiteit={activiteit}
+                                />
+                            </>
+                        );
+                    })}
+                </div>
             </div>
             <Footer/>
         </div>

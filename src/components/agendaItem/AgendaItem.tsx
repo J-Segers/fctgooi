@@ -3,7 +3,7 @@ import PropTypes, {InferProps} from 'prop-types';
 import "./AgendaItem.css";
 
 AgendaItem.propTypes = {
-    key: PropTypes.string.isRequired,
+    key: PropTypes.string,
     soort: PropTypes.string,
     datum: PropTypes.string,
     activiteit: PropTypes.string,
@@ -11,10 +11,16 @@ AgendaItem.propTypes = {
 };
 
 function AgendaItem({key, soort, datum, activiteit, bijzonderheden}: InferProps<typeof AgendaItem.propTypes>) {
+
+
+
     return (
-        <section className="agenda-item" key={key}>
-            {soort} {datum} {activiteit} {bijzonderheden}
-        </section>
+        <div className={"agenda-item"}>
+            <div className={"soort"}>{soort}</div>
+            <div className={"datum"}>{datum}</div>
+            <div className={"activiteit"}>{activiteit}</div>
+            <div className={"bijzonderheden"}>{bijzonderheden}</div>
+        </div>
     );
 }
 

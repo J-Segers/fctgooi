@@ -15,13 +15,16 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    align-items: center;
     margin-top: 25px;
 }
 
 .adres, .meet {
     font-size: larger;
     text-align: center;
+}
+
+.meet nav {
+    text-decoration: none;
 }
 
 .adres {
@@ -40,6 +43,7 @@ footer {
 
 .meet {
     flex-direction: column;
+    cursor: pointer;
 }
 
 .meet span {

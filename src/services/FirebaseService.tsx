@@ -18,9 +18,8 @@ const ref = collection(db, 'calendar')
 
 class FirebaseService {
 
-    async getAll(ref: string): Promise<Array<IKalenderItem>> {
-        const reference = collection(db, ref)
-        const snapshot = await getDocs(reference)
+    async getAll(): Promise<Array<IKalenderItem>> {
+        const snapshot = await getDocs(ref)
         const data: Array<any> = [];
         snapshot.docs.map((item) => {
             return data.push({

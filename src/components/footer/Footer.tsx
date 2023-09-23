@@ -4,8 +4,16 @@ import instagram from "../../assets/instagram-icon.svg";
 import facebook from "../../assets/facebook-icon.svg";
 import {KalenderContext} from "../../context/KalenderContext";
 import IKalenderItem from "../../models/kalenderItem";
+import {NavLink, useNavigate} from "react-router-dom";
 
 function Footer() {
+
+    const navigate = useNavigate();
+
+    function calendar() {
+        navigate('/kalender')
+    }
+
     const agendaItems: IKalenderItem[] = useContext(KalenderContext);
 
     return (
@@ -24,7 +32,7 @@ function Footer() {
                     <img className="facebook" src={facebook} alt="" />
                 </a>
             </section>
-            <section className="meet">
+            <section className="meet" onClick={calendar}>
                 Volgende bijeenkomst:<br />
                 <span>{agendaItems[0]?.datum}</span>
             </section>
