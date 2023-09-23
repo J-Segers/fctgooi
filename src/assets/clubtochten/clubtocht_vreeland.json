@@ -1,145 +1,138 @@
 {
-    "info": {
-        "pagina": "Clubtocht Vreeland",
-        "hero": {
-            "img": "https://farm66.static.flickr.com/65535/51094224837_3633abdee4_b.jpg",
-            "titel": "Clubtocht Najaar 2019 Brabant",
-            "tekst": ""
-        }
-        
+  "hero": "https://farm66.static.flickr.com/65535/51094224837_3633abdee4_b.jpg",
+  "omschrijving": "Clubtocht Najaar 2019 Brabant",
+  "photos": [
+    {
+      "link": "https://farm66.static.flickr.com/65535/51094671063_9fb9e51be1_b.jpg",
+      "alt": "Bob van Altena-1"
     },
-    "gallery": {
-        "0": {
-            "link": "https://farm66.static.flickr.com/65535/51094671063_9fb9e51be1_b.jpg",
-            "alt": "Bob van Altena-1"
-        },
-        "1": {
-            "link": "https://farm66.static.flickr.com/65535/51094224837_3633abdee4_b.jpg",
-            "alt": "Bob van Altena-2"
-        },
-        "2": {
-            "link": "https://farm66.static.flickr.com/65535/51094938570_dd980f46a5_b.jpg",
-            "alt": "Bob van Altena-3"
-        },
-        "3": {
-            "link": "https://farm66.static.flickr.com/65535/51094938525_9a0dcf5578_b.jpg",
-            "alt": "Bob van Altena-4"
-        },
-        "4": {
-            "link": "https://farm66.static.flickr.com/65535/51094224752_d999831ce8_b.jpg",
-            "alt": "Bob van Altena-5"
-        },
-        "5": {
-            "link": "https://farm66.static.flickr.com/65535/51092000214_2cffec7533_b.jpg",
-            "alt": "Frans Beukenkamp-1"
-        },
-        "6": {
-            "link": "https://farm66.static.flickr.com/65535/51091997854_60d4251265_b.jpg",
-            "alt": "Frans Beukenkamp-2"
-        },
-        "7": {
-            "link": "https://farm66.static.flickr.com/65535/51092008267_94e5cfa36e_b.jpg",
-            "alt": "Frans Beukenkamp-3"
-        },
-        "8": {
-            "link": "https://farm66.static.flickr.com/65535/51091997814_10eb910997_b.jpg",
-            "alt": "Frans Beukenkamp-4"
-        },
-        "9": {
-            "link": "https://farm66.static.flickr.com/65535/51092008252_6ff19d67c8_b.jpg",
-            "alt": "Frans Beukenkamp-5"
-        },
-        "10": {
-            "link": "https://farm66.static.flickr.com/65535/51102962637_657132529c_b.jpg",
-            "alt": "Jan Vogelzang-1"
-        },
-        "11": {
-            "link": "https://farm66.static.flickr.com/65535/51103099113_fb1e5fed39_b.jpg",
-            "alt": "Jan Vogelzang-2"
-        },
-        "12": {
-            "link": "https://farm66.static.flickr.com/65535/51102962622_95d7ba5013_b.jpg",
-            "alt": "Jan Vogelzang-3"
-        },
-        "13": {
-            "link": "https://farm66.static.flickr.com/65535/51102935419_2693c4ef85_b.jpg",
-            "alt": "Jan Vogelzang-4"
-        },
-        "14": {
-            "link": "https://farm66.static.flickr.com/65535/51098937292_a092374b69_b.jpg",
-            "alt": "Nico Grim-1"
-        },
-        "15": {
-            "link": "https://farm66.static.flickr.com/65535/51098828816_7911c4fe0c_b.jpg",
-            "alt": "Nico Grim-2"
-        },
-        "16": {
-            "link": "https://farm66.static.flickr.com/65535/51098828911_cae7feea7c_b.jpg",
-            "alt": "Nico Grim-3"
-        },
-        "17": {
-            "link": "https://farm66.static.flickr.com/65535/51098908164_b25861c3dc_b.jpg",
-            "alt": "Nico Grim-4"
-        },
-        "18": {
-            "link": "https://farm66.static.flickr.com/65535/51099635545_3c08bb2aef_b.jpg",
-            "alt": "Wendy van Kuler-1"
-        },
-        "19": {
-            "link": "https://farm66.static.flickr.com/65535/51099635610_22f34d895c_b.jpg",
-            "alt": "Wendy van Kuler-2"
-        },
-        "20": {
-            "link": "https://farm66.static.flickr.com/65535/51098828871_121b7516e8_b.jpg",
-            "alt": "Wendy van Kuler-3"
-        },
-        "21": {
-            "link": "https://farm66.static.flickr.com/65535/51098828836_a503a467db_b.jpg",
-            "alt": "Wendy van Kuler-4"
-        },
-        "22": {
-            "link": "https://farm66.static.flickr.com/65535/51098828796_46e362bfe2_b.jpg",
-            "alt": "Wendy van Kuler-5"
-        },
-        "23": {
-            "link": "https://farm66.static.flickr.com/65535/51115228896_78e90754b3_b.jpg",
-            "alt": "Eric Velzeboer-1"
-        },
-        "24": {
-            "link": "https://farm66.static.flickr.com/65535/51114984354_37f6bc01cd_b.jpg",
-            "alt": "Eric Velzeboer-2"
-        },
-        "25": {
-            "link": "https://farm66.static.flickr.com/65535/51114667237_216e7f65d4_b.jpg",
-            "alt": "Eric Velzeboer-3"
-        },
-        "26": {
-            "link": "https://farm66.static.flickr.com/65535/51115228911_3ae798170c_b.jpg",
-            "alt": "Eric Velzeboer-4"
-        },
-        "27": {
-            "link": "https://farm66.static.flickr.com/65535/51115140268_76eb925a08_b.jpg",
-            "alt": "Eric Velzeboer-5"
-        },
-        "28": {
-            "link": "https://farm66.static.flickr.com/65535/51117214833_cc20c9b81b_b.jpg",
-            "alt": "Anneke Woning-1"
-        },
-        "29": {
-            "link": "https://farm66.static.flickr.com/65535/51117214813_672cd02a36_b.jpg",
-            "alt": "Anneke Woning-2"
-        },
-        "30": {
-            "link": "https://farm66.static.flickr.com/65535/51116737012_8150c6a4cc_b.jpg",
-            "alt": "Anneke Woning-3"
-        },
-        "31": {
-            "link": "https://farm66.static.flickr.com/65535/51117214788_045ce8d7f2_b.jpg",
-            "alt": "Anneke Woning-4"
-        },
-        "32": {
-            "link": "https://farm66.static.flickr.com/65535/51117051754_629357be06_b.jpg",
-            "alt": "Anneke Woning-5"
-        }
+     {
+      "link": "https://farm66.static.flickr.com/65535/51094224837_3633abdee4_b.jpg",
+      "alt": "Bob van Altena-2"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51094938570_dd980f46a5_b.jpg",
+      "alt": "Bob van Altena-3"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51094938525_9a0dcf5578_b.jpg",
+      "alt": "Bob van Altena-4"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51094224752_d999831ce8_b.jpg",
+      "alt": "Bob van Altena-5"
+    },
+     {
+      "link": "https://farm66.static.flickr.com/65535/51092000214_2cffec7533_b.jpg",
+      "alt": "Frans Beukenkamp-1"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51091997854_60d4251265_b.jpg",
+      "alt": "Frans Beukenkamp-2"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51092008267_94e5cfa36e_b.jpg",
+      "alt": "Frans Beukenkamp-3"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51091997814_10eb910997_b.jpg",
+      "alt": "Frans Beukenkamp-4"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51092008252_6ff19d67c8_b.jpg",
+      "alt": "Frans Beukenkamp-5"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51102962637_657132529c_b.jpg",
+      "alt": "Jan Vogelzang-1"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51103099113_fb1e5fed39_b.jpg",
+      "alt": "Jan Vogelzang-2"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51102962622_95d7ba5013_b.jpg",
+      "alt": "Jan Vogelzang-3"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51102935419_2693c4ef85_b.jpg",
+      "alt": "Jan Vogelzang-4"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51098937292_a092374b69_b.jpg",
+      "alt": "Nico Grim-1"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51098828816_7911c4fe0c_b.jpg",
+      "alt": "Nico Grim-2"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51098828911_cae7feea7c_b.jpg",
+      "alt": "Nico Grim-3"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51098908164_b25861c3dc_b.jpg",
+      "alt": "Nico Grim-4"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51099635545_3c08bb2aef_b.jpg",
+      "alt": "Wendy van Kuler-1"
+    },
+   {
+      "link": "https://farm66.static.flickr.com/65535/51099635610_22f34d895c_b.jpg",
+      "alt": "Wendy van Kuler-2"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51098828871_121b7516e8_b.jpg",
+      "alt": "Wendy van Kuler-3"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51098828836_a503a467db_b.jpg",
+      "alt": "Wendy van Kuler-4"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51098828796_46e362bfe2_b.jpg",
+      "alt": "Wendy van Kuler-5"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51115228896_78e90754b3_b.jpg",
+      "alt": "Eric Velzeboer-1"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51114984354_37f6bc01cd_b.jpg",
+      "alt": "Eric Velzeboer-2"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51114667237_216e7f65d4_b.jpg",
+      "alt": "Eric Velzeboer-3"
+    },
+     {
+      "link": "https://farm66.static.flickr.com/65535/51115228911_3ae798170c_b.jpg",
+      "alt": "Eric Velzeboer-4"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51115140268_76eb925a08_b.jpg",
+      "alt": "Eric Velzeboer-5"
+    },
+    "28": {
+      "link": "https://farm66.static.flickr.com/65535/51117214833_cc20c9b81b_b.jpg",
+      "alt": "Anneke Woning-1"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51117214813_672cd02a36_b.jpg",
+      "alt": "Anneke Woning-2"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51116737012_8150c6a4cc_b.jpg",
+      "alt": "Anneke Woning-3"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51117214788_045ce8d7f2_b.jpg",
+      "alt": "Anneke Woning-4"
+    },
+    {
+      "link": "https://farm66.static.flickr.com/65535/51117051754_629357be06_b.jpg",
+      "alt": "Anneke Woning-5"
     }
+  ]
 }
