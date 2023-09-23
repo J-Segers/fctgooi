@@ -1,9 +1,9 @@
 export default interface IEvent {
-    id: string,
+    id?: string,
     datum: string,
-    soort: string,
-    beschrijving: string,
-    hero: string,
+    soort?: string,
+    beschrijving?: string,
+    hero?: string,
     locatie: string,
     photos: string[],
     createdAt?: string,

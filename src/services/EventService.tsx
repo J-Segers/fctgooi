@@ -33,12 +33,12 @@ class EventService {
     async create(item: IEvent): Promise<any> {
         return await addDoc(collection(db, "events"), {
             datum: item.datum,
-            soort: item.soort,
+            soort: "Clubtocht",
             locatie: item.locatie,
-            beschrijving: item.beschrijving,
-            hero: item.hero,
+            beschrijving: "test",
+            hero: "",
             photos: item.photos,
-            createdBy: auth?.currentUser?.uid,
+            createdBy: "automated",
             createdAt: Date.now(),
         });
     }
