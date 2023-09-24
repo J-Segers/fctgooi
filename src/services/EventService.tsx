@@ -31,13 +31,14 @@ class EventService {
     };
 
     async create(item: any): Promise<any> {
+        console.log(item)
         return await addDoc(collection(db, "events"), {
             datum: "01-01-2016",
-            soort: "DeBesteClub",
+            soort: "Clubtocht",
             locatie: "",
-            beschrijving: "Foto's ingezonden door onze leden i.v.m. de Beste Club 2021",
-            hero: "",
-            photos: item,
+            beschrijving: item.beschrijving,
+            hero: item.hero,
+            photos: item.photos,
             createdBy: "automated",
             createdAt: Date.now(),
         });

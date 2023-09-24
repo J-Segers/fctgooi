@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import EventService from "../services/EventService";
-import data from './../assets/clubpresentaties/de-beste-club-2021.json'
+import data from './../assets/clubtochten/clubtocht_voorjaar_2018.json'
 
 
 import IEvent from "../models/eventItem";
@@ -22,6 +22,7 @@ export function DataLoader() {
             soort: ""
         }
     )
+    console.log(data);
 
     EventService
         .create(data)
