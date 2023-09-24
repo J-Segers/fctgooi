@@ -6,6 +6,7 @@
     display: flex;
     -webkit-box-shadow: 1px 4px 5px 0 rgba(0,0,0,0.36);
     box-shadow: 1px 4px 5px 0 rgba(0,0,0,0.36);
+    /*border-bottom: 1px solid black;*/
 }
 
 .agenda-item:first-child {
@@ -15,12 +16,15 @@
 
 .agenda-item+.agenda-item {
     margin-top: 1rem;
-
 }
 
-.agenda-item div+div {
-    margin-left: 1.5rem;
-}
+/*.agenda-item:nth-of-type(even   ) {*/
+/*    background-color: lightgrey;*/
+/*}*/
+
+/*.agenda-item:last-child {*/
+/*    border:none;*/
+/*}*/
 
 .soort, .datum {
     width: 100px;
