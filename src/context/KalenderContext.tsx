@@ -1,6 +1,7 @@
 import React, {createContext, useEffect, useState} from 'react'
 import FirebaseService from "../services/CalendarService";
 import IKalenderItem from "../models/kalenderItem";
+import {filterAndSortAgendaItems} from "../utils/helpers/sorters";
 
 export const KalenderContext = createContext<IKalenderItem[]>([])
 
@@ -10,14 +11,7 @@ interface CalendarProviderProps {
 
 export function CalendarProvider({children} : CalendarProviderProps) {
     const [agendaItems, setAgendaItems] = useState<Array<IKalenderItem>>([])
-
-    function stringToNumber(str: string): number {
-        return parseInt(str.split("-").reverse().join(""));
-    }
-
-    const sortedAgendaItems = agendaItems.filter(item => !item.geweest).sort((a, b) => {
-        return stringToNumber(a.datum) - stringToNumber(b.datum)
-    })
+    const sortedAgendaItems = filterAndSortAgendaItems(agendaItems)
 
     useEffect(() => {
         FirebaseService

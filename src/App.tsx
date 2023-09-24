@@ -5,6 +5,7 @@ import UnderConstruction from './pages/underConstruction/UnderConstruction';
 import {CalendarProvider} from "./context/KalenderContext";
 import Kalender from "./pages/kalender/Kalender";
 import React from "react";
+import ClubTochten from "./pages/clubtochten/ClubTochten";
 
 function App() {
     return (
@@ -13,7 +14,7 @@ function App() {
                 <Routes>
                     <Route path='*' element={<Home/>}/>
                     <Route path="/" element={<Home/>}/>
-                    <Route path='/club' element={<UnderConstruction/>}/>
+                    <Route path='/club' element={<ClubTochten/>}/>
                     <Route path='/kalender' element={<Kalender/>}/>
                     <Route path='/galerij' element={<UnderConstruction/>}/>
                     <Route path='/contact' element={<UnderConstruction/>}/>

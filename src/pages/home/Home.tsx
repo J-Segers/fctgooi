@@ -8,28 +8,23 @@ import Post from '../../components/preview/Preview';
 import dataArr from "../../data/homeData";
 import EventService from "../../services/EventService";
 import IEvent from "../../models/eventItem";
+import {sortEventsDesc} from "../../utils/helpers/sorters";
 
 function Home() {
     const [events, setEvents] = useState<Array<IEvent>>([])
+    const sorted: IEvent[] = sortEventsDesc(events)
+
     let count: number = 0;
     let orientation: string = "left";
-
-    interface Obj {
-        title: string,
-        img: string
-    }
 
     useEffect(() => {
         EventService
             .getHomePageFeed()
-            .then((res) => {
-                setEvents(res)
-                console.log(res)
-            })
+            .then((res) => setEvents(res))
             .catch((e) => console.error(e))
     }, []);
 
-    function changeOrientation() {
+    function changeOrientation(): void {
         if(orientation === "left") {
            orientation = "right";
         } else {
@@ -57,7 +52,7 @@ function Home() {
                 </section>
                 <Spacer />
                 <section className="recente-activiteiten">
-                    {dataArr.map((obj: Obj) => {
+                    {sorted.map((event: IEvent) => {
 
                         let currentOrientation = orientation;
                         let currentCount = count;
@@ -66,11 +61,11 @@ function Home() {
                         count++;
 
                         if(count === dataArr.length){
-                            return <Post title={obj.title} img={obj.img} orientation={currentOrientation} key={currentCount}/>;
+                            return <Post title={event.beschrijving} img={event.hero} beschrijving={event.beschrijving} orientation={currentOrientation} key={currentCount}/>;
                         }
 
                         return <>
-                            <Post title={obj.title} img={obj.img} orientation={currentOrientation} key={currentCount}/>
+                            <Post title={event.beschrijving} img={event.hero} beschrijving={event.beschrijving} orientation={currentOrientation} key={currentCount}/>
                             <Spacer />
                         </>;
                     })}

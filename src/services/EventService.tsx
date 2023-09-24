@@ -1,4 +1,4 @@
-import {auth, db} from "../config/firebase";
+import {db} from "../config/firebase";
 
 import {
     collection,
@@ -46,12 +46,13 @@ class EventService {
         return data as Array<IEvent>;
     };
 
-    async create(item: any): Promise<any> {
+    async create(item: IEvent): Promise<any> {
         console.log(item)
         return await addDoc(collection(db, "events"), {
-            datum: "01-01-2016",
-            soort: "Clubtocht",
-            locatie: "",
+            datum: item.datum,
+            soort: item.soort,
+            locatie: item.locatie,
+            title: item.title,
             beschrijving: item.beschrijving,
             hero: item.hero,
             photos: item.photos,
@@ -62,7 +63,7 @@ class EventService {
 
 
     async getByQuery(term: string): Promise<Array<IEvent>> {
-        const queryTerm = query(ref, where('soort', ">", term));
+        const queryTerm = query(ref, where('soort', "==", term));
         const snapshot = await getDocs(queryTerm);
         const data: Array<any> = [];
         snapshot.docs.map((event) => {

@@ -12,8 +12,6 @@ AgendaItem.propTypes = {
 
 function AgendaItem({key, soort, datum, activiteit, bijzonderheden}: InferProps<typeof AgendaItem.propTypes>) {
 
-
-
     return (
         <div className={"agenda-item"}>
             <div className={"soort"}>{soort}</div>

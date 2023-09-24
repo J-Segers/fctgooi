@@ -1,0 +1,30 @@
+#clubtochten-container {
+    width: 100%;
+    height: auto;
+}
+
+main {
+    width: 100%;
+    min-height: calc(100vh - 300px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#clubtochten-info {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 25px;
+}
+
+.recente-activiteiten {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}

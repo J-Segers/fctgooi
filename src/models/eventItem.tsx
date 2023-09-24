@@ -9,6 +9,7 @@ export default interface IEvent {
     soort?: string,
     beschrijving?: string,
     hero?: string,
+    title?: string,
     locatie: string,
     photos: photo[],
     createdAt?: string,

@@ -4,13 +4,14 @@ import "./Preview.css"
 import PropTypes, {InferProps} from 'prop-types';
 
 Post.propTypes = {
-    title: PropTypes.string.isRequired,
-    img: PropTypes.string.isRequired,
-    orientation: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    img: PropTypes.string,
+    orientation: PropTypes.string,
+    beschrijving: PropTypes.string
 };
 
-function Post({title, img, orientation}: InferProps<typeof Post.propTypes>) {
-      return (
+function Post({title, beschrijving, img, orientation}: InferProps<typeof Post.propTypes>) {
+    return (
         <>
             {orientation === "left" ? 
                 <article className={`post-container .${orientation}`}>
@@ -20,14 +21,14 @@ function Post({title, img, orientation}: InferProps<typeof Post.propTypes>) {
                     <hr className='left' />
                     <section className="info">
                         <h2>{title}</h2>
-                        {"Evenement: 'Test'"}
+                        {beschrijving}
                     </section>
                 </article>
                 :
                 <article className={`post-container .${orientation}`}>
                     <section className="info">
                         <h2>{title}</h2>
-                        {"Evenement: 'Test'"}
+                        {beschrijving}
                     </section>
                     <hr className='right' />
                     <section className="preview">
