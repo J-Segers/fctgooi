@@ -5,7 +5,6 @@ import "./Home.css";
 import Footer from '../../components/footer/Footer';
 import Spacer from '../../components/spacer/Spacer';
 import Post from '../../components/preview/Preview';
-import dataArr from "../../data/homeData";
 import EventService from "../../services/EventService";
 import IEvent from "../../models/eventItem";
 import {sortEventsDesc} from "../../utils/helpers/sorters";
@@ -15,7 +14,6 @@ function Home() {
     const sorted: IEvent[] = sortEventsDesc(events)
 
     let count: number = 0;
-    let orientation: string = "left";
 
     useEffect(() => {
         EventService
@@ -23,14 +21,6 @@ function Home() {
             .then((res) => setEvents(res))
             .catch((e) => console.error(e))
     }, []);
-
-    function changeOrientation(): void {
-        if(orientation === "left") {
-           orientation = "right";
-        } else {
-            orientation = "left";
-        }
-    }
 
     return (
         <div id={"home-container"}>
@@ -53,21 +43,32 @@ function Home() {
                 <Spacer />
                 <section className="recente-activiteiten">
                     {sorted.map((event: IEvent) => {
-
-                        let currentOrientation = orientation;
-                        let currentCount = count;
-                        
-                        changeOrientation();
                         count++;
 
-                        if(count === dataArr.length){
-                            return <Post title={event.title} img={event.hero} beschrijving={event.beschrijving} orientation={currentOrientation} key={currentCount}/>;
+                        if(count === sorted.length){
+                            return(
+                                <>
+                                    <Post
+                                        title={event.title}
+                                        img={event.hero}
+                                        beschrijving={event.beschrijving}
+                                        key={event.id}
+                                    />
+                                </>
+                            );
                         }
 
-                        return <>
-                            <Post title={event.title} img={event.hero} beschrijving={event.beschrijving} orientation={currentOrientation} key={currentCount}/>
-                            <Spacer />
-                        </>;
+                        return(
+                            <>
+                                <Post
+                                    title={event.title}
+                                    img={event.hero}
+                                    beschrijving={event.beschrijving}
+                                    key={event.id}
+                                />
+                                <Spacer />
+                            </>
+                        );
                     })}
                 </section>
             </main>

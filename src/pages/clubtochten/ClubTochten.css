@@ -22,6 +22,16 @@ main {
     margin: 50px 25px;
 }
 
+#clubtochten-info p {
+    text-align: center;
+}
+
+#clubtochten-info h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--accent-text)
+}
+
 .recente-activiteiten {
     display: flex;
     justify-content: flex-start;
