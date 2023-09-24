@@ -12,7 +12,7 @@ main {
     align-items: center;
 }
 
-#clubtochten-info {
+#event {
     width: auto;
     height: auto;
     display: flex;
@@ -22,7 +22,7 @@ main {
     margin: 50px 25px;
 }
 
-.recente-activiteiten {
+.overview-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
