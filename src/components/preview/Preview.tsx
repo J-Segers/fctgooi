@@ -20,14 +20,14 @@ function Post({title, beschrijving, img, orientation}: InferProps<typeof Post.pr
                     </section>
                     <hr className='left' />
                     <section className="info">
-                        <h2>{title}</h2>
+                        <h2>{title ? title : beschrijving}</h2>
                         {beschrijving}
                     </section>
                 </article>
                 :
                 <article className={`post-container .${orientation}`}>
                     <section className="info">
-                        <h2>{title}</h2>
+                        <h2>{title ? title : beschrijving}</h2>
                         {beschrijving}
                     </section>
                     <hr className='right' />

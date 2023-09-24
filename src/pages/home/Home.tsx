@@ -61,11 +61,11 @@ function Home() {
                         count++;
 
                         if(count === dataArr.length){
-                            return <Post title={event.beschrijving} img={event.hero} beschrijving={event.beschrijving} orientation={currentOrientation} key={currentCount}/>;
+                            return <Post title={event.title} img={event.hero} beschrijving={event.beschrijving} orientation={currentOrientation} key={currentCount}/>;
                         }
 
                         return <>
-                            <Post title={event.beschrijving} img={event.hero} beschrijving={event.beschrijving} orientation={currentOrientation} key={currentCount}/>
+                            <Post title={event.title} img={event.hero} beschrijving={event.beschrijving} orientation={currentOrientation} key={currentCount}/>
                             <Spacer />
                         </>;
                     })}
