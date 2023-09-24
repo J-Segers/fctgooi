@@ -10,8 +10,11 @@ import {
     where,
     addDoc,
     updateDoc,
-    deleteField
+    deleteField,
+    orderBy,
+    limit
 } from 'firebase/firestore';
+
 import IEvent from "../models/eventItem";
 
 const ref = collection(db, 'events')
@@ -20,6 +23,19 @@ class EventService {
 
     async getAll(): Promise<Array<IEvent>> {
         const snapshot = await getDocs(ref)
+        const data: Array<any> = [];
+        snapshot.docs.map((item) => {
+            return data.push({
+                id: item.id,
+                ...item.data(),
+            });
+        });
+        return data as Array<IEvent>;
+    };
+
+    async getHomePageFeed(): Promise<Array<IEvent>> {
+        const q = query(ref, orderBy("datum", "desc"), limit(5));
+        const snapshot = await getDocs(q);
         const data: Array<any> = [];
         snapshot.docs.map((item) => {
             return data.push({
@@ -43,6 +59,7 @@ class EventService {
             createdAt: Date.now(),
         });
     }
+
 
     async getByQuery(term: string): Promise<Array<IEvent>> {
         const queryTerm = query(ref, where('soort', ">", term));

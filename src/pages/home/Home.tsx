@@ -21,7 +21,7 @@ function Home() {
 
     useEffect(() => {
         EventService
-            .getAll()
+            .getHomePageFeed()
             .then((res) => {
                 setEvents(res)
                 console.log(res)
