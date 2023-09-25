@@ -1,8 +1,8 @@
 import React from 'react';
 import "./UnderConstruction.css";
 import uc from '../../assets/underConstruction.png';
-import Header from '../../components/header/Header';
-import Footer from '../../components/footer/Footer';
+import Header from '../../components/headerComponent/HeaderComponent';
+import Footer from '../../components/footerComponent/FooterComponent';
 import { Link } from 'react-router-dom';
 
 function UnderConstruction() {

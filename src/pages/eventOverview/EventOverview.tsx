@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {InferProps} from 'prop-types';
-import Header from "../../components/header/Header";
+import Header from "../../components/headerComponent/HeaderComponent";
 import Spacer from "../../components/spacer/Spacer";
 import Post from "../../components/preview/Preview";
-import Footer from "../../components/footer/Footer";
+import Footer from "../../components/footerComponent/FooterComponent";
 import IEvent from "../../models/eventItem";
 import EventService from "../../services/EventService";
 import {sortEventsDesc} from "../../utils/helpers/sorters";
