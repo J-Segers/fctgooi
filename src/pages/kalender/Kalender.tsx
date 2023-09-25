@@ -2,8 +2,8 @@ import React, {useContext} from 'react';
 import {KalenderContext} from "../../context/KalenderContext";
 import IKalenderItem from "../../models/kalenderItem";
 import AgendaItem from "../../components/agendaItem/AgendaItem";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
+import Header from "../../components/headerComponent/HeaderComponent";
+import Footer from "../../components/footerComponent/FooterComponent";
 import "./Kalender.css";
 
 function Kalender() {

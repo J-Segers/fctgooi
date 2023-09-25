@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import Header from '../../components/header/Header';
+import Header from '../../components/headerComponent/HeaderComponent';
 import Hero from '../../components/hero/Hero';
 import "./Home.css";
-import Footer from '../../components/footer/Footer';
+import Footer from '../../components/footerComponent/FooterComponent';
 import Spacer from '../../components/spacer/Spacer';
 import Post from '../../components/preview/Preview';
 import EventService from "../../services/EventService";

@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import "./Footer.css";
+import "./FooterComponent.css";
 import instagram from "../../assets/instagram-icon.svg";
 import facebook from "../../assets/facebook-icon.svg";
 import {KalenderContext} from "../../context/KalenderContext";
 import IKalenderItem from "../../models/kalenderItem";
 import {useNavigate} from "react-router-dom";
 
-function Footer() {
+function FooterComponent() {
 
     const navigate = useNavigate();
 
@@ -40,4 +40,4 @@ function Footer() {
     );
 }
 
-export default Footer;
+export default FooterComponent;

@@ -1,10 +1,11 @@
 import React from 'react';
-import "./Header.css";
 import logo from "../../assets/logo.svg";
+import "./HeaderComponent.css";
 import NavBar from '../navBar/NavBar';
 import { Link } from 'react-router-dom';
 
-function Header() {
+function HeaderComponent() {
+
     return (
         <header>
             <div id="header-container">
@@ -13,6 +14,7 @@ function Header() {
             </div>
         </header>
     );
+    
 }
 
-export default Header;
+export default HeaderComponent;

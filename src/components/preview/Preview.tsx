@@ -3,14 +3,14 @@ import "./Preview.css"
 
 import PropTypes, {InferProps} from 'prop-types';
 
-Post.propTypes = {
+Preview.propTypes = {
     title: PropTypes.string,
     img: PropTypes.string,
     orientation: PropTypes.string,
     beschrijving: PropTypes.string
 };
 
-function Post({title, beschrijving, img}: InferProps<typeof Post.propTypes>) {
+function Preview({title, beschrijving, img}: InferProps<typeof Preview.propTypes>) {
     return (
         <>
                 <article className={`post-container`}>
@@ -27,4 +27,4 @@ function Post({title, beschrijving, img}: InferProps<typeof Post.propTypes>) {
     );
 }
 
-export default Post;
+export default Preview;
