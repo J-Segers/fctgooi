@@ -1,25 +1,38 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import "./NavBar.css";
 import { Link } from 'react-router-dom';
 
-NavBar.propTypes = {
-    
-};
-
 function NavBar() {
     
-    const [isOpen, toggleIsOpen] = useState(false);
+    const [isOpen, toggleIsOpen] = useState<boolean>(false);
+    const [dropDown, toggleDropDown] = useState<boolean>(false);
+
+    function openBurger() {
+        if(isOpen) {
+            if(dropDown) {
+                toggleDropDown(false);
+            }
+            toggleIsOpen(false);
+        } else {
+            toggleIsOpen(true);
+        }
+    }
 
     return (
         <div id="nav-container">
             <nav className={isOpen ? "open" : "closed"}>
                 <Link to="/">Home</Link>
-                <Link to="/club" className="drop">Club</Link>
+                <div className="title" onClick={() => toggleDropDown(!dropDown)}>Club</div>
+                <div className={`dropdown-${dropDown ? "open" : "closed"}`}>
+                    <Link to={"/info"} >info</Link>
+                    <Link to={"/kalender"} >kalender</Link>
+                    <Link to={"/clubtochten"} >clubtochten</Link>
+                    <Link to={"/evenementen"} >evenementen</Link>
+                </div>
                 <Link to="/galerij">Fotogalerij</Link>
-                <a href="mailto:info@fctgooi.nl" className="contact">Contact</a>
+                <Link to={"/contact"}>Contact</Link>
             </nav>
-            <div className={isOpen ? "burger-btn-open" : "burger-btn-closed"} onClick={() => toggleIsOpen(!isOpen)}>
+            <div className={isOpen ? "burger-btn-open" : "burger-btn-closed"} onClick={() => openBurger()}>
                 <div className="bar" />
                 <div className="bar" />
                 <div className="bar" />

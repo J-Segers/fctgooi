@@ -17,7 +17,7 @@ header {
     align-items: center;
 }
 
-#header-container a {
+#header-container .logo {
     margin-left: 25px;
 }
 
@@ -43,10 +43,6 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
-    
-    #header-container a {
-        margin-left: 100px;
     }
     
     #header-container img {
