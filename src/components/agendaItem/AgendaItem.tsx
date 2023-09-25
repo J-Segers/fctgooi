@@ -10,7 +10,7 @@ AgendaItem.propTypes = {
     bijzonderheden: PropTypes.string
 };
 
-function AgendaItem({key, soort, datum, activiteit, bijzonderheden}: InferProps<typeof AgendaItem.propTypes>) {
+function AgendaItem({soort, datum, activiteit, bijzonderheden}: InferProps<typeof AgendaItem.propTypes>) {
 
     return (
         <div className={"agenda-item"}>

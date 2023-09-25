@@ -5,7 +5,8 @@ import UnderConstruction from './pages/underConstruction/UnderConstruction';
 import {CalendarProvider} from "./context/KalenderContext";
 import Kalender from "./pages/kalender/Kalender";
 import React from "react";
-import ClubTochten from "./pages/clubtochten/ClubTochten";
+import EventOverview from "./pages/eventOverview/EventOverview";
+import {EventSoort} from "./utils/CONSTANTS";
 
 function App() {
     return (
@@ -14,7 +15,10 @@ function App() {
                 <Routes>
                     <Route path='*' element={<Home/>}/>
                     <Route path="/" element={<Home/>}/>
-                    <Route path='/club' element={<ClubTochten/>}/>
+                    <Route path='/clubtochten' element={<EventOverview type={EventSoort.Clubtocht}/>}/>
+                    <Route path='/bondsfotowedstrijd' element={<EventOverview type={EventSoort.Bondsfotowedstrijd}/>}/>
+                    <Route path='/exposities' element={<EventOverview type={EventSoort.Expositie}/>}/>
+                    <Route path='/debesteclub' element={<EventOverview type={EventSoort.DeBesteClub}/>}/>
                     <Route path='/kalender' element={<Kalender/>}/>
                     <Route path='/galerij' element={<UnderConstruction/>}/>
                     <Route path='/contact' element={<UnderConstruction/>}/>

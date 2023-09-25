@@ -2,11 +2,8 @@ import React from 'react';
 import "./Hero.css";
 import info from "../../assets/Information-Icon.svg";
 import foto from "../../assets/Bob Altena-.jpg"
-import PropTypes from 'prop-types';
-import { prototype } from 'events';
 
 Hero.propTypes = {
-    
 };
 
 interface heroObj {

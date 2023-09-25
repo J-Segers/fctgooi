@@ -7,6 +7,7 @@
     -webkit-box-shadow: 1px 4px 5px 0 rgba(0,0,0,0.36);
     box-shadow: 1px 4px 5px 0 rgba(0,0,0,0.36);
     /*border-bottom: 1px solid black;*/
+    /*border-radius: 5px;*/
 }
 
 .agenda-item:first-child {
@@ -14,17 +15,17 @@
     text-transform: uppercase;
 }
 
-.agenda-item+.agenda-item {
-    margin-top: 1rem;
+    /*.agenda-item+.agenda-item {*/
+    /*    margin-top: 1rem;*/
+    /*}*/
+
+.agenda-item:nth-of-type(even   ) {
+    background-color: lightgrey;
 }
 
-/*.agenda-item:nth-of-type(even   ) {*/
-/*    background-color: lightgrey;*/
-/*}*/
-
-/*.agenda-item:last-child {*/
-/*    border:none;*/
-/*}*/
+.agenda-item:last-child {
+    border:none;
+}
 
 .soort, .datum {
     width: 100px;
