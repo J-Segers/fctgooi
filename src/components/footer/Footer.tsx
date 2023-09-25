@@ -1,10 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useContext } from 'react';
 import "./Footer.css";
 import instagram from "../../assets/instagram-icon.svg";
 import facebook from "../../assets/facebook-icon.svg";
-import { getNextMeeting } from '../../helperFunctions/nextmeet';
+import {KalenderContext} from "../../context/KalenderContext";
+import IKalenderItem from "../../models/kalenderItem";
+import {useNavigate} from "react-router-dom";
 
 function Footer() {
+
+    const navigate = useNavigate();
+
+    function calendar() {
+        navigate('/kalender')
+    }
+
+    const agendaItems: IKalenderItem[] = useContext(KalenderContext);
+
     return (
         <footer>
             <section className="adres">
@@ -21,9 +32,9 @@ function Footer() {
                     <img className="facebook" src={facebook} alt="" />
                 </a>
             </section>
-            <section className="meet">
+            <section className="meet" onClick={calendar}>
                 Volgende bijeenkomst:<br />
-                <span>{`${getNextMeeting()}`}</span>
+                <span>{agendaItems[0]?.datum}</span>
             </section>
         </footer>
     );

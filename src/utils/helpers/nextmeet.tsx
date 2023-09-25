@@ -1,8 +1,6 @@
 /**
- * tijdelijke oplossing voor updaten datum tot de backend werkt.
+ * tijdelijke oplossing voor bijwerken datum tot de backend werkt.
  */
-
-import { log } from "console";
 
 const initial_meeting = new Date(2023, 8, 6, 21);
 let previous_meeting = new Date(initial_meeting);
@@ -10,7 +8,7 @@ let next_meeting = getNextDate();
 
 export function getNextMeeting(): String {
 
-    const today = new Date();
+    const today: Date = new Date();
 
     while(true) {
 
@@ -44,7 +42,7 @@ export function getNextMeeting(): String {
 
 function updateMeetingDate() {
 
-    // sla de next_meeting waarde op in de previous_meeting.
+    // Sla de next_meeting waarde op in de previous_meeting,
     // zodat de nieuwe meeting datum kan worden berekend.
     previous_meeting = next_meeting;
 
@@ -55,11 +53,11 @@ function updateMeetingDate() {
 
 function getNextDate(): Date {
 
-    const year = previous_meeting.getFullYear();
-    const month = previous_meeting.getMonth();
-    const day = previous_meeting.getDate();
-    const hour = previous_meeting.getHours();
-    const minutes = previous_meeting.getMinutes();
+    const year: number = previous_meeting.getFullYear();
+    const month: number = previous_meeting.getMonth();
+    const day: number = previous_meeting.getDate();
+    const hour: number = previous_meeting.getHours();
+    const minutes: number = previous_meeting.getMinutes();
     
     // oude datum + fortnight (14 dagen) == nieuwe datum
     return new Date(year, month, day + 14, hour, minutes);

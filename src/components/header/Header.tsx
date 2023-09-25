@@ -5,7 +5,6 @@ import NavBar from '../navBar/NavBar';
 import { Link } from 'react-router-dom';
 
 function Header() {
-
     return (
         <header>
             <div id="header-container">
@@ -14,7 +13,6 @@ function Header() {
             </div>
         </header>
     );
-    
 }
 
 export default Header;

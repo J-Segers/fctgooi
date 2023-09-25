@@ -1,29 +1,26 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Header from '../../components/header/Header';
 import Hero from '../../components/hero/Hero';
 import "./Home.css";
 import Footer from '../../components/footer/Footer';
 import Spacer from '../../components/spacer/Spacer';
 import Post from '../../components/preview/Preview';
-import dataArr from "../../data/homeData";
+import EventService from "../../services/EventService";
+import IEvent from "../../models/eventItem";
+import {sortEventsDesc} from "../../utils/helpers/sorters";
+
 function Home() {
+    const [events, setEvents] = useState<Array<IEvent>>([])
+    const sorted: IEvent[] = sortEventsDesc(events)
 
     let count: number = 0;
-    let orientation: string = "left";
 
-    interface Obj {
-        title: string,
-        img: string
-    }
-       
-
-    function changeOrientation() {
-        if(orientation === "left") {
-           orientation = "right";
-        } else {
-            orientation = "left";
-        }
-    }
+    useEffect(() => {
+        EventService
+            .getHomePageFeed()
+            .then((res) => setEvents(res))
+            .catch((e) => console.error(e))
+    }, []);
 
     return (
         <div id={"home-container"}>
@@ -45,22 +42,33 @@ function Home() {
                 </section>
                 <Spacer />
                 <section className="recente-activiteiten">
-                    {dataArr.map((obj: Obj) => {
-
-                        let currentOrientation = orientation;
-                        let currentCount = count;
-                        
-                        changeOrientation();
+                    {sorted.map((event: IEvent) => {
                         count++;
 
-                        if(count === dataArr.length){
-                            return <Post title={obj.title} img={obj.img} orientation={currentOrientation} key={currentCount}/>;
+                        if(count === sorted.length){
+                            return(
+                                <>
+                                    <Post
+                                        title={event.title}
+                                        img={event.hero}
+                                        beschrijving={event.beschrijving}
+                                        key={event.id}
+                                    />
+                                </>
+                            );
                         }
 
-                        return <>
-                            <Post title={obj.title} img={obj.img} orientation={currentOrientation} key={currentCount}/>
-                            <Spacer />
-                        </>;
+                        return(
+                            <>
+                                <Post
+                                    title={event.title}
+                                    img={event.hero}
+                                    beschrijving={event.beschrijving}
+                                    key={event.id}
+                                />
+                                <Spacer />
+                            </>
+                        );
                     })}
                 </section>
             </main>
