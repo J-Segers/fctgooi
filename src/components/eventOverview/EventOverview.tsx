@@ -7,6 +7,7 @@ import EventService from "../../services/EventService";
 import {sortEventsDesc} from "../../utils/helpers/sorters";
 import {EventInfo, EventSoort} from "../../utils/CONSTANTS";
 import "./EventOverview.css"
+import {Link} from "react-router-dom";
 
 EventOverview.propTypes = {
     type: EventSoort,
@@ -62,24 +63,28 @@ function EventOverview({type}: InferProps<typeof EventOverview.propTypes>) {
                     if(count === sorted.length){
                         return(
                             <>
-                                <Preview
-                                    title={event.title}
-                                    img={event.hero}
-                                    beschrijving={event.beschrijving}
-                                    key={event.id}
-                                />
+                                <Link to={`exposities/${event.id}`}>
+                                    <Preview
+                                        title={event.title}
+                                        img={event.hero}
+                                        beschrijving={event.beschrijving}
+                                        key={event.id}
+                                    />
+                                </Link>
                             </>
                         );
                     }
 
                     return(
                         <>
-                            <Preview
-                                title={event.title}
-                                img={event.hero}
-                                beschrijving={event.beschrijving}
-                                key={event.id}
-                            />
+                            <Link to={`${event.id}`}>
+                                <Preview
+                                    title={event.title}
+                                    img={event.hero}
+                                    beschrijving={event.beschrijving}
+                                    key={event.id}
+                                />
+                            </Link>
                             <Spacer />
                         </>
                     );

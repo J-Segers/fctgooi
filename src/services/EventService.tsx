@@ -75,7 +75,7 @@ class EventService {
         return data as Array<IEvent>;
     };
 
-    async getOne(id: string): Promise<any> {
+    async getOne(id: any): Promise<any> {
         const eventRef = doc(db, 'events', id);
         return await getDoc(eventRef)
     }
