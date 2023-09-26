@@ -1,14 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {InferProps} from 'prop-types';
-import Header from "../../components/headerComponent/HeaderComponent";
-import Spacer from "../../components/spacer/Spacer";
-import Post from "../../components/preview/Preview";
-import Footer from "../../components/footerComponent/FooterComponent";
+import Spacer from "../spacer/Spacer";
+import Preview from "../preview/Preview";
 import IEvent from "../../models/eventItem";
 import EventService from "../../services/EventService";
 import {sortEventsDesc} from "../../utils/helpers/sorters";
 import {EventInfo, EventSoort} from "../../utils/CONSTANTS";
-
+import "./EventOverview.css"
 
 EventOverview.propTypes = {
     type: EventSoort,
@@ -52,45 +50,41 @@ function EventOverview({type}: InferProps<typeof EventOverview.propTypes>) {
 
     return (
         <div id={"eventOverview-container"}>
-            <Header/>
-            <main>
-                <section id="event-info">
-                    <h1>{pageInfo.titel}</h1>
-                    {pageInfo.beschrijving.map((line => <p>{line}</p>))}
-                </section>
-                <Spacer/>
-                <section className="overview-container">
-                    {sorted.map((event: IEvent) => {
-                        count++;
+            <section id="event-info">
+                <h2>{pageInfo.titel}</h2>
+                {pageInfo.beschrijving.map((line => <p>{line}</p>))}
+            </section>
+            <Spacer/>
+            <section className="overview-container">
+                {sorted.map((event: IEvent) => {
+                    count++;
 
-                        if(count === sorted.length){
-                            return(
-                                <>
-                                    <Post
-                                        title={event.title}
-                                        img={event.hero}
-                                        beschrijving={event.beschrijving}
-                                        key={event.id}
-                                    />
-                                </>
-                            );
-                        }
-
+                    if(count === sorted.length){
                         return(
                             <>
-                                <Post
+                                <Preview
                                     title={event.title}
                                     img={event.hero}
                                     beschrijving={event.beschrijving}
                                     key={event.id}
                                 />
-                                <Spacer />
                             </>
                         );
-                    })}
-                </section>
-            </main>
-            <Footer/>
+                    }
+
+                    return(
+                        <>
+                            <Preview
+                                title={event.title}
+                                img={event.hero}
+                                beschrijving={event.beschrijving}
+                                key={event.id}
+                            />
+                            <Spacer />
+                        </>
+                    );
+                })}
+            </section>
         </div>
     );
 }
