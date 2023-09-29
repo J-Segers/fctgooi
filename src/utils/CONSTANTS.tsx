@@ -2,7 +2,7 @@ export enum EventSoort {
     Clubtocht = "Clubtocht",
     Expositie = "Expositie",
     Bondsfotowedstrijd = "Bondsfotowedstrijd",
-    DeBesteClub = "DeBesteClub",
+    DeBesteClub = "Debesteclub",
     TEST = ""
 }
 

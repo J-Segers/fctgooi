@@ -27,8 +27,8 @@ function App() {
                     <Route path='/de-beste-club' element={<DBC />}/>
                     <Route path='/kalender' element={<Kalender/>}/>
                     <Route path='/contact' element={<Contact />}/>
-                    <Route path={"/clubtochten/:id"} element={<Gallerij1 />} />
-                    <Route path={"/bondsfotowedstrijd/:id"} element={<Gallerij1 />} />
+                    <Route path={"/clubtochten/:id"} element={<Gallerij2 />} />
+                    <Route path={"/bondsfotowedstrijd/:id"} element={<Gallerij2 />} />
                     <Route path={"/exposities/:id"} element={<Gallerij2 />} />
                     <Route path={"/de-beste-club/:id"} element={<Gallerij2 />} />
                 </Routes>

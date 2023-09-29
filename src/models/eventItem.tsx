@@ -1,4 +1,4 @@
-interface photo {
+export interface IPhoto {
     link: string,
     alt: string
 }
@@ -10,8 +10,8 @@ export default interface IEvent {
     beschrijving?: string,
     hero?: string,
     title?: string,
-    locatie: string,
-    photos: photo[],
+    locatie?: string,
+    photos: IPhoto[],
     createdAt?: string,
     createdBy?: string,
 }

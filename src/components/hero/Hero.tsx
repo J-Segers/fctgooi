@@ -14,7 +14,6 @@ interface heroObj {
 
 function Hero() {
 
-
     const maandFoto: heroObj = {
         foto: foto,
         fotograaf: "Bob Altena",

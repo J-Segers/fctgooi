@@ -8,6 +8,7 @@ import {sortEventsDesc} from "../../utils/helpers/sorters";
 import {EventInfo, EventSoort} from "../../utils/CONSTANTS";
 import "./EventOverview.css"
 import {Link} from "react-router-dom";
+import {getRandomHero} from "../../utils/helpers/heroPicker";
 
 EventOverview.propTypes = {
     type: EventSoort,
@@ -32,7 +33,7 @@ function EventOverview({type}: InferProps<typeof EventOverview.propTypes>) {
 
     function getPageInfo(type: EventSoort): void {
         console.log(type)
-        switch(type) {
+        switch (type) {
             case EventSoort.Clubtocht:
                 setPageInfo(EventInfo.clubtochten)
                 break;
@@ -60,13 +61,13 @@ function EventOverview({type}: InferProps<typeof EventOverview.propTypes>) {
                 {sorted.map((event: IEvent) => {
                     count++;
 
-                    if(count === sorted.length){
-                        return(
+                    if (count === sorted.length) {
+                        return (
                             <>
                                 <Link to={`exposities/${event.id}`}>
                                     <Preview
                                         title={event.title}
-                                        img={event.hero}
+                                        img={getRandomHero(event)}
                                         beschrijving={event.beschrijving}
                                         key={event.id}
                                     />
@@ -75,17 +76,17 @@ function EventOverview({type}: InferProps<typeof EventOverview.propTypes>) {
                         );
                     }
 
-                    return(
+                    return (
                         <>
                             <Link to={`${event.id}`}>
                                 <Preview
                                     title={event.title}
-                                    img={event.hero}
+                                    img={getRandomHero(event)}
                                     beschrijving={event.beschrijving}
                                     key={event.id}
                                 />
                             </Link>
-                            <Spacer />
+                            <Spacer/>
                         </>
                     );
                 })}

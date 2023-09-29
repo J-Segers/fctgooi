@@ -46,15 +46,15 @@ class EventService {
         return data as Array<IEvent>;
     };
 
-    async create(item: IEvent): Promise<any> {
+    async create(item: any): Promise<any> {
         console.log(item)
         return await addDoc(collection(db, "events"), {
             datum: item.datum,
             soort: item.soort,
-            locatie: item.locatie,
+            locatie: "",
             title: item.title,
             beschrijving: item.beschrijving,
-            hero: item.hero,
+            hero: "",
             photos: item.photos,
             createdBy: "automated",
             createdAt: Date.now(),

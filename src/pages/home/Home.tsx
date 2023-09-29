@@ -8,6 +8,7 @@ import Post from '../../components/preview/Preview';
 import EventService from "../../services/EventService";
 import IEvent from "../../models/eventItem";
 import {sortEventsDesc} from "../../utils/helpers/sorters";
+import {getRandomHero} from "../../utils/helpers/heroPicker";
 
 function Home() {
     const [events, setEvents] = useState<Array<IEvent>>([])
@@ -50,7 +51,7 @@ function Home() {
                                 <>
                                     <Post
                                         title={event.title}
-                                        img={event.hero}
+                                        img={getRandomHero(event)}
                                         beschrijving={event.beschrijving}
                                         key={event.id}
                                     />
@@ -62,7 +63,7 @@ function Home() {
                             <>
                                 <Post
                                     title={event.title}
-                                    img={event.hero}
+                                    img={getRandomHero(event)}
                                     beschrijving={event.beschrijving}
                                     key={event.id}
                                 />
