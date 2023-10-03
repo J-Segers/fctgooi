@@ -64,7 +64,7 @@ function Galerij() {
                     if(highlightedImg === 0) {
                         setHighlightedImg(event.photos.length - 1);
                     } else {
-                        setHighlightedImg(highlightedImg + 1);
+                        setHighlightedImg(highlightedImg - 1);
                     }
                 }}>{`<`}</div>
                 <div id="carousel-btn-close" onClick={() => toggleCarousel(false)}>{`✖`}</div>
@@ -72,7 +72,6 @@ function Galerij() {
             </div>}
             <div id={carousel ? "foto-overzicht-flat" : "foto-overzicht"}>
                 {event?.photos?.map((foto) => {
-                    console.log(foto);
                     return (
                         <div className={"foto-container"}>
                             <img src={foto?.link} alt={foto?.alt} onClick={(e) => {handleCarouselInteraction(e)}}/>
