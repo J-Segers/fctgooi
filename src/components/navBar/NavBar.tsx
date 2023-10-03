@@ -26,8 +26,8 @@ function NavBar() {
                 <div className={`dropdown-${dropDown ? "open" : "closed"}`}>
                     <Link to={"/clubtochten"} >Clubtochten</Link>
                     <Link to={"/bondsfotowedstrijd"} >Bondsfotowedstrijd</Link>
-                    <Link to={"/exposities"} >Exposities</Link>
-                    <Link to={"/de-beste-club"} >De Beste Club</Link>
+                    <Link to={"/expositie"} >Exposities</Link>
+                    <Link to={"/debesteclub"} >De Beste Club</Link>
                 </div>
                 <Link to={"/kalender"}>Kalender</Link>
                 <Link to={"/contact"}>Contact</Link>

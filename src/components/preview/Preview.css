@@ -32,11 +32,26 @@ hr {
     margin: 25px;
 }
 
-.preview-container .info h2 {
+.preview-container a .info {
+    text-overflow: ellipsis;
+}
+
+.preview-container a .info h2 {
     width: 90%;
     margin: 0;
     padding: 0;
     text-align: center;
+}
+
+.preview-container a {
+    text-decoration: none;
+}
+
+.preview-container a:link,
+.preview-container a:visited,
+.preview-container a:hover,
+.preview-container a:active {
+    color: var(--accent-text)
 }
 
 .info, .info h2 {
@@ -49,6 +64,14 @@ hr {
 .info {
     text-align: justify;
     width: 90%;
+}
+
+.info p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    width: 250px;
+    overflow: hidden;
 }
 
 @media only screen and (min-width: 992px) {

@@ -48,6 +48,10 @@ function Galerij() {
     return (
         <div id={"galerij-container"}>
             {!carousel && <HeaderComponent/>}
+            {!carousel && <div className={"galerij-info"}>
+                <h2>{event.title}</h2>
+                <p>{event.beschrijving}</p>
+            </div>}
             {carousel && <div id="carousel">
                 <div id="carousel-btn-next" onClick={() => {
                     if(highlightedImg === event.photos.length - 1) {

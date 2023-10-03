@@ -88,7 +88,7 @@ function Contact() {
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade">
                     </iframe>
-                    <a ref={"https://www.google.com/maps/place/Woondienstencentrum+Lopes+Dias/@52.241335,5.178484,15z/data=!4m6!3m5!1s0x47c66b4e1624c3bb:0x6655cb80e60622c0!8m2!3d52.2413345!4d5.1784836!16s%2Fg%2F11cn3v2459?hl=nl&entry=ttu"} target={"_blank"} rel={"noopener noreferrer"}>ROUTE</a>
+                    <a href={"https://www.google.com/maps/place/Woondienstencentrum+Lopes+Dias/@52.241335,5.178484,15z/data=!4m6!3m5!1s0x47c66b4e1624c3bb:0x6655cb80e60622c0!8m2!3d52.2413345!4d5.1784836!16s%2Fg%2F11cn3v2459?hl=nl&entry=ttu"} target={"_blank"} rel={"noopener noreferrer"}>ROUTE</a>
                 </section>
 
 

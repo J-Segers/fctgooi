@@ -22,13 +22,13 @@ function App() {
                     <Route path="/" element={<Home/>}/>
                     <Route path='/clubtochten' element={<Clubtochten />}/>
                     <Route path='/bondsfotowedstrijd' element={<Bondsfotowedstrijd />}/>
-                    <Route path='/exposities' element={<Exposities />}/>
+                    <Route path='/expositie' element={<Exposities />}/>
                     <Route path='/debesteclub' element={<DBC />}/>
                     <Route path='/kalender' element={<Kalender/>}/>
                     <Route path='/contact' element={<Contact />}/>
                     <Route path={"/clubtochten/:id"} element={<Galerij />}/>
                     <Route path={"/bondsfotowedstrijd/:id"} element={<Galerij />}/>
-                    <Route path={"/exposities/:id"} element={<Galerij />}/>
+                    <Route path={"/expositie/:id"} element={<Galerij />}/>
                     <Route path={"/debesteclub/:id"} element={<Galerij />}/>
                 </Routes>
             </BrowserRouter>
