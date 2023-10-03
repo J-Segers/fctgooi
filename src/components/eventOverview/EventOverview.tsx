@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import PropTypes, {InferProps} from 'prop-types';
+import {InferProps} from 'prop-types';
 import Spacer from "../spacer/Spacer";
 import Preview from "../preview/Preview";
 import IEvent from "../../models/eventItem";
@@ -7,7 +7,6 @@ import EventService from "../../services/EventService";
 import {sortEventsDesc} from "../../utils/helpers/sorters";
 import {EventInfo, EventSoort} from "../../utils/CONSTANTS";
 import "./EventOverview.css"
-import {Link} from "react-router-dom";
 import {getRandomHero} from "../../utils/helpers/heroPicker";
 
 EventOverview.propTypes = {
