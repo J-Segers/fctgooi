@@ -28,7 +28,7 @@ function EventOverview({type}: InferProps<typeof EventOverview.propTypes>) {
             .then(res => setEvents(res))
             .catch(e => console.error(e))
             .finally(() => getPageInfo(type))
-    }, []);
+    }, [type]);
 
     function getPageInfo(type: EventSoort): void {
         console.log(type)

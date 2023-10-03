@@ -30,7 +30,7 @@ function Galerij() {
         EventService.getOne(id)
             .then(res => setEvent(res.data()))
             .catch((e) => console.error(e));
-    }, []);
+    }, [id]);
 
 
     function handleCarouselInteraction(e: React.MouseEvent<HTMLImageElement>) {
