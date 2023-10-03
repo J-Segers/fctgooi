@@ -1,0 +1,31 @@
+.spacer-container {
+    width: 1rem;
+    height: 100px;
+}
+
+.spacer {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: var(--secundary-color);
+    position: relative;
+    top: 42px;
+}
+
+.spacer::before, .spacer::after {
+    position: absolute;
+    width: .625rem;
+    height: .625rem;
+    content: "";
+    border-radius: 50%;
+    background-color: var(--secundary-color);
+    left: 3px;
+}
+
+.spacer::before {
+    bottom: 30px;
+}
+
+.spacer::after {
+    top: 30px;
+}

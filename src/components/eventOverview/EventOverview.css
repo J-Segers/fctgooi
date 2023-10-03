@@ -1,0 +1,36 @@
+#eventOverview-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#event-info {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 25px;
+}
+
+#event-info h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--accent-text)
+}
+
+#event-info p {
+    text-align: center;
+    margin: 0;
+}
+
+.overview-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,127 @@
+.preview-container {
+    max-width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.preview, .preview img {
+    width: 100%;
+    border-radius: 0;
+}
+
+.preview img {
+    height: auto;
+}
+
+.preview {
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+hr {
+    width: 100px;
+    height: 0;
+    border: 1px solid var(--secundary-color);
+    margin: 25px;
+}
+
+.preview-container a .info {
+    text-overflow: ellipsis;
+}
+
+.preview-container a .info h2 {
+    width: 90%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.preview-container a {
+    text-decoration: none;
+}
+
+.preview-container a:link,
+.preview-container a:visited,
+.preview-container a:hover,
+.preview-container a:active {
+    color: var(--accent-text)
+}
+
+.info, .info h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info {
+    text-align: justify;
+    width: 90%;
+}
+
+.info p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    width: 250px;
+    overflow: hidden;
+}
+
+@media only screen and (min-width: 992px) {
+    .preview-container {
+        max-width: 992px;
+        height: 400px;
+        flex-direction: row;
+        justify-content: center;
+        margin: 100px 0;
+    }
+
+    .preview-container:nth-of-type(odd) {
+        flex-direction: row-reverse;
+    }
+
+    .preview-container:nth-of-type(even) {
+        flex-direction: row;
+    }
+
+    .preview, .preview img {
+        width: 600px;
+        border-radius: 100px;
+    }
+
+    .preview img {
+        height: 100%;
+    }
+
+    .preview {
+        height: 400px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    hr {
+        width: 100px;
+        height: 0;
+        border: 1px solid var(--secundary-color);
+    }
+
+    .info h2 {
+        width: 600px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .info {
+        width: auto;
+    }
+
+}
