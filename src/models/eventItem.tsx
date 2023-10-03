@@ -4,7 +4,7 @@ export interface IPhoto {
 }
 
 export default interface IEvent {
-    id?: string,
+    id: string,
     datum: string,
     soort?: string,
     beschrijving?: string,
@@ -13,5 +13,5 @@ export default interface IEvent {
     locatie?: string,
     photos: IPhoto[],
     createdAt?: string,
-    createdBy?: string,
+    createdBy?: string
 }

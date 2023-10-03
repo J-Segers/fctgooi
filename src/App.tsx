@@ -10,8 +10,7 @@ import Bondsfotowedstrijd from "./pages/bondsfotowedstrijd/Bondsfotowedstrijd";
 import Exposities from "./pages/expositie/Exposities";
 import DBC from "./pages/dbc/DBC";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
-import Gallerij1 from "./components/gallerij1/Gallerij1";
-import Gallerij2 from "./components/gallerij2/Gallerij2";
+import Galerij from "./components/galerij/Galerij";
 
 function App() {
     return (
@@ -24,13 +23,13 @@ function App() {
                     <Route path='/clubtochten' element={<Clubtochten />}/>
                     <Route path='/bondsfotowedstrijd' element={<Bondsfotowedstrijd />}/>
                     <Route path='/exposities' element={<Exposities />}/>
-                    <Route path='/de-beste-club' element={<DBC />}/>
+                    <Route path='/debesteclub' element={<DBC />}/>
                     <Route path='/kalender' element={<Kalender/>}/>
                     <Route path='/contact' element={<Contact />}/>
-                    <Route path={"/clubtochten/:id"} element={<Gallerij2 />} />
-                    <Route path={"/bondsfotowedstrijd/:id"} element={<Gallerij2 />} />
-                    <Route path={"/exposities/:id"} element={<Gallerij2 />} />
-                    <Route path={"/de-beste-club/:id"} element={<Gallerij2 />} />
+                    <Route path={"/clubtochten/:id"} element={<Galerij />}/>
+                    <Route path={"/bondsfotowedstrijd/:id"} element={<Galerij />}/>
+                    <Route path={"/exposities/:id"} element={<Galerij />}/>
+                    <Route path={"/debesteclub/:id"} element={<Galerij />}/>
                 </Routes>
             </BrowserRouter>
         </CalendarProvider>

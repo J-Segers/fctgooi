@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {InferProps} from 'prop-types';
+import PropTypes, {InferProps} from 'prop-types';
 import Spacer from "../spacer/Spacer";
 import Preview from "../preview/Preview";
 import IEvent from "../../models/eventItem";
@@ -11,7 +11,7 @@ import {Link} from "react-router-dom";
 import {getRandomHero} from "../../utils/helpers/heroPicker";
 
 EventOverview.propTypes = {
-    type: EventSoort,
+    type: EventSoort
 };
 
 function EventOverview({type}: InferProps<typeof EventOverview.propTypes>) {
@@ -64,28 +64,26 @@ function EventOverview({type}: InferProps<typeof EventOverview.propTypes>) {
                     if (count === sorted.length) {
                         return (
                             <>
-                                <Link to={`exposities/${event.id}`}>
                                     <Preview
+                                        id={event.id}
                                         title={event.title}
                                         img={getRandomHero(event)}
                                         beschrijving={event.beschrijving}
                                         key={event.id}
                                     />
-                                </Link>
                             </>
                         );
                     }
 
                     return (
                         <>
-                            <Link to={`${event.id}`}>
-                                <Preview
-                                    title={event.title}
-                                    img={getRandomHero(event)}
-                                    beschrijving={event.beschrijving}
-                                    key={event.id}
-                                />
-                            </Link>
+                            <Preview
+                                id={event.id}
+                                title={event.title}
+                                img={getRandomHero(event)}
+                                beschrijving={event.beschrijving}
+                                key={event.id}
+                            />
                             <Spacer/>
                         </>
                     );
