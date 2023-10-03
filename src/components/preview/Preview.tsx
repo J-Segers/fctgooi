@@ -19,7 +19,7 @@ function Preview({id, title, beschrijving, img}: InferProps<typeof Preview.propT
             <article className={`preview-container`}>
                 <Link to={id}>
                     <section className="preview">
-                        <img src={img} alt="" />
+                        {img &&  <img src={img} alt="" />}
                     </section>
                 </Link>
                 <hr />
