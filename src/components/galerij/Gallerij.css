@@ -17,6 +17,10 @@
     text-align: justify;
 }
 
+#carousel {
+    display: none;
+}
+
 #foto-overzicht {
     width: 100%;
     min-height: calc(100vh - 300px);

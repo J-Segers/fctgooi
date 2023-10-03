@@ -34,14 +34,16 @@ function Galerij() {
 
 
     function handleCarouselInteraction(e: React.MouseEvent<HTMLImageElement>) {
-        for(let i = 0; i < event.photos.length; i++) {
-            if(event.photos[i].alt === e.currentTarget.getAttribute("alt")) {
-                setHighlightedImg(i);
+        if(window.innerWidth >= 992) {
+            for(let i = 0; i < event.photos.length; i++) {
+                if(event.photos[i].alt === e.currentTarget.getAttribute("alt")) {
+                    setHighlightedImg(i);
+                }
             }
-        }
 
-        if(!carousel) {
-            toggleCarousel(true);
+            if(!carousel) {
+                toggleCarousel(true);
+            }
         }
     }
 
