@@ -10,7 +10,7 @@ import Bondsfotowedstrijd from "./pages/bondsfotowedstrijd/Bondsfotowedstrijd";
 import Exposities from "./pages/expositie/Exposities";
 import DBC from "./pages/dbc/DBC";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
-import Galerij from "./components/galerij/Galerij";
+import Galerij from "./pages/galerij/Galerij";
 
 function App() {
     return (

@@ -3,8 +3,8 @@ import React, {useEffect, useState} from 'react';
 import EventService from "../../services/EventService";
 import "./Gallerij.css";
 import {useParams} from "react-router-dom";
-import HeaderComponent from "../headerComponent/HeaderComponent";
-import FooterComponent from "../footerComponent/FooterComponent";
+import HeaderComponent from "../../components/headerComponent/HeaderComponent";
+import FooterComponent from "../../components/footerComponent/FooterComponent";
 import IEvent from "../../models/eventItem";
 
 function Galerij() {
