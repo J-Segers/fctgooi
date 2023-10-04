@@ -40,6 +40,10 @@
         align-items: center;
     }
 
+    #kalender-container {
+        width: 992px;
+    }
+
     #kalender-container h2 {
         margin-left: 1rem;
     }
