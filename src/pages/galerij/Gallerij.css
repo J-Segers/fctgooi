@@ -110,6 +110,10 @@
         z-index: 20;
     }
 
+    #carousel-btn-next:hover, #carousel-btn-prev:hover, #carousel-btn-close:hover, .foto-container:hover {
+        cursor: pointer;
+    }
+
     #carousel-btn-next, #carousel-btn-prev {
         width: 100px;
         height: 100px;
