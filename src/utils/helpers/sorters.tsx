@@ -5,8 +5,8 @@ export function stringToNumber(str: string): number {
     return parseInt(str.split("-").reverse().join(""));
 }
 
-export function filterAndSortAgendaItems(items: IKalenderItem[]): IKalenderItem[] {
-    return items.filter(item => !item.geweest).sort((a, b) => stringToNumber(a.datum) - stringToNumber(b.datum)
+export function sortAgendaItems(items: IKalenderItem[]): IKalenderItem[] {
+    return items.sort((a, b) => stringToNumber(a.datum) - stringToNumber(b.datum)
     )
 }
 

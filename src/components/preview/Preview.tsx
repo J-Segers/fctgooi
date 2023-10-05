@@ -2,27 +2,34 @@ import React from 'react';
 import "./Preview.css"
 
 import PropTypes, {InferProps} from 'prop-types';
+import {Link} from "react-router-dom";
 
 Preview.propTypes = {
+    id: PropTypes.string.isRequired,
     title: PropTypes.string,
     img: PropTypes.string,
     orientation: PropTypes.string,
     beschrijving: PropTypes.string
 };
 
-function Preview({title, beschrijving, img}: InferProps<typeof Preview.propTypes>) {
+function Preview({id, title, beschrijving, img}: InferProps<typeof Preview.propTypes>) {
+
     return (
         <>
-                <article className={`post-container`}>
+            <article className={`preview-container`}>
+                <Link to={id}>
+                    <section className="preview">
+                        {img &&  <img src={img} alt="" />}
+                    </section>
+                </Link>
+                <hr />
+                <Link to={id}>
                     <section className="info">
                         <h2>{title ? title : beschrijving}</h2>
-                        {beschrijving}
+                        <p>{beschrijving}</p>
                     </section>
-                    <hr className='right' />
-                    <section className="preview">
-                        <img src={img} alt="" />
-                    </section>
-                </article>
+                </Link>
+            </article>
         </>
     );
 }

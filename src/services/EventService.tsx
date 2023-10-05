@@ -46,15 +46,15 @@ class EventService {
         return data as Array<IEvent>;
     };
 
-    async create(item: IEvent): Promise<any> {
+    async create(item: any): Promise<any> {
         console.log(item)
         return await addDoc(collection(db, "events"), {
             datum: item.datum,
             soort: item.soort,
-            locatie: item.locatie,
+            locatie: "",
             title: item.title,
             beschrijving: item.beschrijving,
-            hero: item.hero,
+            hero: "",
             photos: item.photos,
             createdBy: "automated",
             createdAt: Date.now(),
@@ -75,7 +75,7 @@ class EventService {
         return data as Array<IEvent>;
     };
 
-    async getOne(id: string): Promise<any> {
+    async getOne(id: any): Promise<any> {
         const eventRef = doc(db, 'events', id);
         return await getDoc(eventRef)
     }

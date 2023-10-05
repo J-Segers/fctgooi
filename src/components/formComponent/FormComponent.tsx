@@ -1,7 +1,6 @@
 import React, {RefObject} from 'react';
 import PropTypes from 'prop-types';
 import Spacer from "../spacer/Spacer";
-
 import './FormComponent.css';
 
 FormComponent.propTypes = {
@@ -16,7 +15,7 @@ function FormComponent(
         isSubmitted: boolean,
         setIsSubmitted: any,
         children: any,
-        submitAction: any,
+        submitAction: any
     }
 ) {
     return (

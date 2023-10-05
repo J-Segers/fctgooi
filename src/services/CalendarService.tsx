@@ -43,6 +43,19 @@ class CalendarService {
         });
     }
 
+    async getFutureEvents(): Promise<Array<IKalenderItem>> {
+        const queryTerm = query(ref, where('geweest', "==", false));
+        const snapshot = await getDocs(queryTerm);
+        const data: Array<any> = [];
+        snapshot.docs.map((event) => {
+            return data.push({
+                id: event.id,
+                ...event.data(),
+            });
+        });
+        return data as Array<IKalenderItem>;
+    };
+
     async getByQuery(term: string): Promise<Array<IKalenderItem>> {
         const queryTerm = query(ref, where('type', ">", term));
         const snapshot = await getDocs(queryTerm);

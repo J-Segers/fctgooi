@@ -30,13 +30,12 @@
         " . img . title . specs . ";
 
     background-color: rgba(238, 238, 238, 0.5);
-    box-shadow: 5px;
     transition: none;
     overflow: hidden;
     position: absolute;
     top: 0;
     z-index: 10;
-    padding: 2%;
+    padding: 2% 0;
 }
 
 .maand-info img {

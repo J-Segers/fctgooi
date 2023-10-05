@@ -27,7 +27,6 @@ function Contact() {
             .catch((e: any) => console.error(e));
     }
 
-
     return (
         <>
             <Header/>
@@ -70,7 +69,6 @@ function Contact() {
                         :
 
                         <p>Je bericht is verstuurd! Dankjewel!</p>
-
                     }
                 </section>
 

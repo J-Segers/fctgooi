@@ -1,6 +1,6 @@
-.post-container {
+.preview-container {
     max-width: 100%;
-    height: 500px;
+    height: auto;
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
@@ -13,6 +13,10 @@
     border-radius: 0;
 }
 
+.preview img {
+    height: auto;
+}
+
 .preview {
     height: auto;
     overflow: hidden;
@@ -21,18 +25,37 @@
     align-items: center;
 }
 
+.preview img {
+    height: auto;
+}
+
 hr {
     width: 100px;
     height: 0;
-    border: 1px solid var(--secundary-color); 
+    border: 1px solid var(--secundary-color);
     margin: 25px;
 }
 
-.post-container .info h2 {
+.preview-container a .info {
+    text-overflow: ellipsis;
+}
+
+.preview-container a .info h2 {
     width: 90%;
     margin: 0;
     padding: 0;
     text-align: center;
+}
+
+.preview-container a {
+    text-decoration: none;
+}
+
+.preview-container a:link,
+.preview-container a:visited,
+.preview-container a:hover,
+.preview-container a:active {
+    color: var(--accent-text)
 }
 
 .info, .info h2 {
@@ -47,8 +70,16 @@ hr {
     width: 90%;
 }
 
+.info p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    width: 250px;
+    overflow: hidden;
+}
+
 @media only screen and (min-width: 992px) {
-    .post-container {
+    .preview-container {
         max-width: 992px;
         height: 400px;
         flex-direction: row;
@@ -56,19 +87,23 @@ hr {
         margin: 100px 0;
     }
 
-    .post-container:nth-of-type(odd) {
+    .preview-container:nth-of-type(odd) {
         flex-direction: row-reverse;
     }
 
-    .post-container:nth-of-type(even) {
+    .preview-container:nth-of-type(even) {
         flex-direction: row;
     }
-    
+
     .preview, .preview img {
         width: 600px;
         border-radius: 100px;
     }
-    
+
+    .preview img {
+        height: 100%;
+    }
+
     .preview {
         height: 400px;
         overflow: hidden;
@@ -76,11 +111,11 @@ hr {
         justify-content: center;
         align-items: center;
     }
-    
+
     hr {
         width: 100px;
         height: 0;
-        border: 1px solid var(--secundary-color); 
+        border: 1px solid var(--secundary-color);
     }
 
     .info h2 {

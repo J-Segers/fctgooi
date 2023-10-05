@@ -10,6 +10,7 @@ import Bondsfotowedstrijd from "./pages/bondsfotowedstrijd/Bondsfotowedstrijd";
 import Exposities from "./pages/expositie/Exposities";
 import DBC from "./pages/dbc/DBC";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
+import Galerij from "./pages/galerij/Galerij";
 
 function App() {
     return (
@@ -21,10 +22,14 @@ function App() {
                     <Route path="/" element={<Home/>}/>
                     <Route path='/clubtochten' element={<Clubtochten />}/>
                     <Route path='/bondsfotowedstrijd' element={<Bondsfotowedstrijd />}/>
-                    <Route path='/exposities' element={<Exposities />}/>
-                    <Route path='/de-beste-club' element={<DBC />}/>
+                    <Route path='/expositie' element={<Exposities />}/>
+                    <Route path='/debesteclub' element={<DBC />}/>
                     <Route path='/kalender' element={<Kalender/>}/>
                     <Route path='/contact' element={<Contact />}/>
+                    <Route path={"/clubtochten/:id"} element={<Galerij />}/>
+                    <Route path={"/bondsfotowedstrijd/:id"} element={<Galerij />}/>
+                    <Route path={"/expositie/:id"} element={<Galerij />}/>
+                    <Route path={"/debesteclub/:id"} element={<Galerij />}/>
                 </Routes>
             </BrowserRouter>
         </CalendarProvider>

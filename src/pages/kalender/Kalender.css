@@ -8,20 +8,50 @@
 }
 
 #kalender-container {
-    width: 990px;
+    width: 100%;
     min-height: calc(100vh - 300px);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
 }
+
 #kalender-container h2 {
+    width: 90%;
     margin-left: 1rem;
 }
 
 #kalender-items {
     display: flex;
-    width: 100%;
+    width: 90%;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 5rem;
+}
+
+@media only screen and (min-width: 992px) {
+    #kalender-pagina-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #kalender-container {
+        width: 992px;
+    }
+
+    #kalender-container h2 {
+        margin-left: 1rem;
+    }
+
+    #kalender-items {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        margin-bottom: 5rem;
+    }
 }

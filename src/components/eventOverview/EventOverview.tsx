@@ -7,9 +7,10 @@ import EventService from "../../services/EventService";
 import {sortEventsDesc} from "../../utils/helpers/sorters";
 import {EventInfo, EventSoort} from "../../utils/CONSTANTS";
 import "./EventOverview.css"
+import {getRandomHero} from "../../utils/helpers/heroPicker";
 
 EventOverview.propTypes = {
-    type: EventSoort,
+    type: EventSoort
 };
 
 function EventOverview({type}: InferProps<typeof EventOverview.propTypes>) {
@@ -27,11 +28,11 @@ function EventOverview({type}: InferProps<typeof EventOverview.propTypes>) {
             .then(res => setEvents(res))
             .catch(e => console.error(e))
             .finally(() => getPageInfo(type))
-    }, []);
+    }, [type]);
 
     function getPageInfo(type: EventSoort): void {
         console.log(type)
-        switch(type) {
+        switch (type) {
             case EventSoort.Clubtocht:
                 setPageInfo(EventInfo.clubtochten)
                 break;
@@ -59,28 +60,30 @@ function EventOverview({type}: InferProps<typeof EventOverview.propTypes>) {
                 {sorted.map((event: IEvent) => {
                     count++;
 
-                    if(count === sorted.length){
-                        return(
+                    if (count === sorted.length) {
+                        return (
                             <>
-                                <Preview
-                                    title={event.title}
-                                    img={event.hero}
-                                    beschrijving={event.beschrijving}
-                                    key={event.id}
-                                />
+                                    <Preview
+                                        id={event.id}
+                                        title={event.title}
+                                        img={getRandomHero(event)}
+                                        beschrijving={event.beschrijving}
+                                        key={event.id}
+                                    />
                             </>
                         );
                     }
 
-                    return(
+                    return (
                         <>
                             <Preview
+                                id={event.id}
                                 title={event.title}
-                                img={event.hero}
+                                img={getRandomHero(event)}
                                 beschrijving={event.beschrijving}
                                 key={event.id}
                             />
-                            <Spacer />
+                            <Spacer/>
                         </>
                     );
                 })}

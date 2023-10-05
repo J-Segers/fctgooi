@@ -4,10 +4,11 @@ import Hero from '../../components/hero/Hero';
 import "./Home.css";
 import Footer from '../../components/footerComponent/FooterComponent';
 import Spacer from '../../components/spacer/Spacer';
-import Post from '../../components/preview/Preview';
+import Preview from '../../components/preview/Preview';
 import EventService from "../../services/EventService";
 import IEvent from "../../models/eventItem";
 import {sortEventsDesc} from "../../utils/helpers/sorters";
+import {getRandomHero} from "../../utils/helpers/heroPicker";
 
 function Home() {
     const [events, setEvents] = useState<Array<IEvent>>([])
@@ -22,6 +23,9 @@ function Home() {
             .catch((e) => console.error(e))
     }, []);
 
+    useEffect(() => {
+        console.log(events)
+    }, [events]);
     return (
         <div id={"home-container"}>
             <Hero />
@@ -48,9 +52,10 @@ function Home() {
                         if(count === sorted.length){
                             return(
                                 <>
-                                    <Post
+                                    <Preview
+                                        id={`${event.soort?.toLowerCase()}/${event.id}`}
                                         title={event.title}
-                                        img={event.hero}
+                                        img={getRandomHero(event)}
                                         beschrijving={event.beschrijving}
                                         key={event.id}
                                     />
@@ -60,9 +65,10 @@ function Home() {
 
                         return(
                             <>
-                                <Post
+                                <Preview
+                                    id={`${event.soort?.toLowerCase()}/${event.id}`}
                                     title={event.title}
-                                    img={event.hero}
+                                    img={getRandomHero(event)}
                                     beschrijving={event.beschrijving}
                                     key={event.id}
                                 />
